@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Repartidores | Eat For Less</title>
+<!-- Google Fonts: Poppins (Mandated by Design System) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols (Literal Transcription Mandate) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#55615c",
+                "primary-fixed": "#aef2c0",
+                "on-primary-container": "#003f20",
+                "secondary-fixed-dim": "#bdc9c3",
+                "on-tertiary-fixed-variant": "#444747",
+                "on-primary": "#ffffff",
+                "secondary-fixed": "#d9e5df",
+                "surface-container-highest": "#e2e2e2",
+                "outline": "#707971",
+                "inverse-primary": "#93d5a5",
+                "on-primary-fixed": "#00210e",
+                "surface-container": "#eeeeee",
+                "surface-variant": "#e2e2e2",
+                "on-secondary-fixed": "#131e1a",
+                "on-primary-fixed-variant": "#0a522d",
+                "on-secondary-fixed-variant": "#3e4945",
+                "surface-container-high": "#e8e8e8",
+                "tertiary": "#5c5f5e",
+                "on-secondary-container": "#5a6560",
+                "surface-container-low": "#f3f3f4",
+                "error-container": "#ffdad6",
+                "surface": "#f9f9f9",
+                "primary-container": "#6cad80",
+                "inverse-on-surface": "#f0f1f1",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed": "#191c1c",
+                "background": "#f9f9f9",
+                "on-background": "#1a1c1c",
+                "surface-bright": "#f9f9f9",
+                "secondary-container": "#d6e2dc",
+                "on-surface-variant": "#404941",
+                "primary": "#2a6a43",
+                "on-tertiary-container": "#343737",
+                "inverse-surface": "#2f3131",
+                "on-error": "#ffffff",
+                "on-error-container": "#93000a",
+                "surface-dim": "#dadada",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "outline-variant": "#c0c9bf",
+                "tertiary-fixed-dim": "#c4c7c6",
+                "on-surface": "#1a1c1c",
+                "tertiary-fixed": "#e1e3e2",
+                "tertiary-container": "#9da09f",
+                "primary-fixed-dim": "#93d5a5",
+                "surface-tint": "#2a6a43"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "8px",
+                "xl": "12px",
+                "2xl": "24px",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-sm": "8px",
+                "margin-mobile": "16px",
+                "stack-lg": "32px",
+                "margin-desktop": "40px",
+                "stack-md": "16px",
+                "container-max": "1200px",
+                "unit": "8px",
+                "gutter": "24px",
+                "section-gap": "80px"
+            },
+            "fontFamily": {
+                "body-md": ["Poppins"],
+                "headline-lg-mobile": ["Poppins"],
+                "body-lg": ["Poppins"],
+                "label-md": ["Poppins"],
+                "headline-lg": ["Poppins"],
+                "headline-xl": ["Poppins"],
+                "headline-md": ["Poppins"],
+                "label-sm": ["Poppins"],
+                "body-sm": ["Poppins"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-level-1 { box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05); }
+        .shadow-level-2 { box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08); }
+        
+        .transition-soft { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        body { background-color: #f9f9f9; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Eat For Less</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">Benefits</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">Support</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md hover:opacity-80 transition-all duration-200 active:scale-95">Sign Up</button>
+</nav>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Section 1: Hero -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="w-full md:w-1/2 order-2 md:order-1"><div class="inline-block bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full mb-4 font-label-sm text-label-sm">Sé un Repartidor</div><h1 class="font-headline-xl text-headline-xl md:text-[56px] leading-[1.1] mb-8 text-on-background">Gana dinero en tu propio horario</h1><form class="space-y-4 bg-white p-8 rounded-2xl shadow-level-1 border border-outline-variant/30"><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Nombre Completo</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="Tu nombre" type="text"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Correo Electrónico</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="ejemplo@correo.com" type="email"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Teléfono</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="+34 000 000 000" type="tel"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Tipo de Vehículo</label><select class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all"><option>Bicicleta</option><option>Moto</option><option>Coche</option></select><p class="text-label-sm text-secondary mt-1">* No necesitas licencia para repartir en bicicleta.</p></div><button class="w-full bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md flex items-center justify-center gap-2 hover:opacity-90 shadow-level-2 transition-soft mt-4" type="submit">Regístrate ahora<span class="material-symbols-outlined">arrow_forward</span></button></form></div>
+<div class="w-full md:w-1/2 order-1 md:order-2 relative md:scale-90">
+<div class="rounded-2xl overflow-hidden shadow-level-2 aspect-[4/3] relative">
+<img class="w-full h-full object-cover" data-alt="A focused young delivery rider wearing an orange t-shirt and a black cap, carrying two pizza boxes and a brown paper bag in an urban street setting. The lighting is soft and natural, emphasizing a professional yet approachable freelance atmosphere. The background features classic city brownstone buildings with subtle green accents that match the Eat For Less brand identity. The overall aesthetic is clean, minimalist, and high-quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITfLiObnqTh0DdV6QBy2q83j8mTbIA2Ea5Zrspm94k6HlLxug9FMeWRt11jQbzpcw1Nkc9j5MiYjciKB5G74hD6ZtSzJenxXdlfJsxMj-LpFGo9gOVApjlDmtmaT0dpUvOCgtN4Zjq1RL5o0dEC-2M46X8kULMnxfhp9_kuRFmnTYH13g_WFTfgW3MLzeFCnLIXyRB7sEz2fw5rEs0hL98Y_5nCah0kbkUMsZAK_41utOkWuc5EI8AYe2ptb8aqC5cBOPupaFwHciHh4">
+</div>
+<!-- Decorative element -->
+<div class="absolute -z-10 -bottom-6 -right-6 w-64 h-64 bg-primary-fixed opacity-20 rounded-full blur-3xl"></div>
+<div class="mt-stack-lg p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20"><h3 class="font-headline-md text-headline-md mb-8 text-primary text-center md:text-left">Beneficios y Ventajas de ser Repartidor</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">schedule</span><span class="font-bold text-on-surface">Gana bajo tus propios términos</span></div><p class="text-body-sm text-secondary">Flexibilidad total de horarios para que trabajes cuando quieras.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">payments</span><span class="font-bold text-on-surface">Pagos competitivos y rápidos</span></div><p class="text-body-sm text-secondary">Acceso a tus ganancias semanalmente de forma segura.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">pedal_bike</span><span class="font-bold text-on-surface">Sin barreras de entrada</span></div><p class="text-body-sm text-secondary">Reparte en bicicleta sin necesidad de licencia ni trámites complejos.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">support_agent</span><span class="font-bold text-on-surface">Soporte constante</span></div><p class="text-body-sm text-secondary">Equipo dedicado para ayudarte en cada entrega, 24/7.</p></div></div></div></div>
+</section>
+<!-- Section 2: Beneficios Clave -->
+<section class="bg-surface-container-low py-section-gap mt-stack-lg transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">¿Por qué elegir Eat For Less?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Diseñado para que tu esfuerzo rinda al máximo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Column 1 -->
+<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
+<div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
+<img class="w-12 h-12 object-contain" data-alt="A professional, minimalist delivery rider icon for Eat For Less Business. Stylized delivery bag symbol with clean lines and geometric shapes. The color is the brand's primary green #6cad80. The style is modern, tech-focused, and high-end startup aesthetic against a soft neutral background." src="https://lh3.googleusercontent.com/aida/AP1WRLvc-JHViI2EXR9ghtRK6jSlS8RC3WGQkDv2N7TJ75W4OWe9ESfDCb6kpAEpGhZMB12cnluVp-b95AeleM6ON2CeHAmXFgdg5HWq9tyZTvRmsot7s6OrtO3OckuPruLFE6qkuKEgk3nJc50b4afKV6PFERElPFZAl2pWxxqosg5zFf5toFHaOcrp3AC4MeOVkzPjFxjj1rYVIirF301TRodLZYnw3nUBx3k9BwYOAy0MiBRxZv4_kS0mzH_O">
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Horarios Flexibles</h3>
+<p class="font-body-sm text-body-sm text-secondary">Tú decides cuándo y cuánto tiempo trabajar. No hay turnos mínimos ni jefes que te vigilen.</p>
+</div>
+<!-- Column 2 -->
+<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
+<div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
+<span class="material-symbols-outlined text-primary text-4xl">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Pagos Rápidos</h3>
+<p class="font-body-sm text-body-sm text-secondary">Recibe tus ganancias semanalmente sin complicaciones directamente en tu cuenta bancaria.</p>
+</div>
+<!-- Column 3 -->
+<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
+<div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
+<span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Soporte 24/7</h3>
+<p class="font-body-sm text-body-sm text-secondary">Equipo dedicado para ayudarte en cada entrega. Nunca estarás solo en la carretera.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Cómo funciona -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex flex-col md:flex-row gap-16 items-start">
+<div class="w-full md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg mb-6">Empieza a ganar en tres pasos</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">Nuestra plataforma está diseñada para que puedas salir a la calle lo antes posible.</p>
+<button class="text-primary font-label-md flex items-center gap-2 group">
+                        Ver tutorial detallado
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 gap-8 relative">
+<!-- Connector line (Desktop only) -->
+<div class="hidden md:block absolute left-8 top-12 bottom-12 w-0.5 bg-primary-container opacity-20"></div>
+<div class="flex gap-8 items-start relative bg-white p-8 rounded-2xl shadow-level-1">
+<div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10">1</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Regístrate</h4>
+<p class="font-body-sm text-body-sm text-secondary">Crea tu perfil en menos de 5 minutos a través de nuestra aplicación o sitio web.</p>
+</div>
+</div><div class="flex gap-8 items-start relative bg-white p-8 rounded-2xl shadow-level-1">
+<div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10">2</div>
+<div><h4 class="font-headline-md text-headline-md mb-2">Identificación y Elegibilidad</h4><p class="font-body-sm text-body-sm text-secondary">Proporciona tu licencia de conducir o identificación oficial (ID). También requerimos tu número de seguro social para realizar una verificación de antecedentes y confirmar tu elegibilidad.</p></div>
+</div>
+<div class="flex gap-8 items-start relative bg-white p-8 rounded-2xl shadow-level-1">
+<div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10">3</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Empieza a ganar</h4>
+<p class="font-body-sm text-body-sm text-secondary">Una vez aprobado, enciende la app, acepta pedidos y genera ingresos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Requisitos -->
+<section class="py-section-gap bg-surface transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-white rounded-2xl p-10 md:p-16 shadow-level-1 border border-outline-variant/30 flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg mb-6">Lo que necesitas para empezar</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">Asegúrate de cumplir con estos requisitos básicos antes de comenzar tu registro.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<span class="font-body-md text-body-md">Vehículo propio (Coche, Moto o Bicicleta)</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+<span class="font-body-md text-body-md">Smartphone con datos (iOS o Android)</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="font-body-md text-body-md">Mayor de edad (18+ años)</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low"><span class="material-symbols-outlined text-primary">badge</span><span class="font-body-md text-body-md">Identificación oficial (o Licencia de conducir si vas a repartir en coche o moto)</span></div><div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low"><span class="material-symbols-outlined text-primary">verified_user</span><span class="font-body-md text-body-md">Número de Seguro Social (únicamente para verificación de antecedentes y elegibilidad)</span></div></div>
+</div>
+<div class="md:w-1/2 flex items-center justify-center">
+<div class="grid grid-cols-2 gap-4">
+<div class="w-full h-48 bg-primary-container/20 rounded-2xl p-6 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2">sentiment_satisfied</span>
+<span class="font-label-sm text-label-sm">Actitud positiva</span>
+</div>
+<div class="w-full h-48 bg-surface-container-high rounded-2xl p-6 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2">timer</span>
+<span class="font-label-sm text-label-sm">Puntualidad</span>
+</div>
+<div class="w-full h-48 bg-surface-variant rounded-2xl p-6 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2">health_and_safety</span>
+<span class="font-label-sm text-label-sm">Conducción segura</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: CTA Final -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mb-20 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="relative bg-primary-container rounded-2xl p-12 md:p-24 overflow-hidden text-center text-on-primary">
+<!-- Background Pattern (Decorative) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
+<h2 class="font-headline-xl text-headline-xl mb-6 relative z-10">¿Listo para conducir con nosotros?</h2>
+<p class="font-body-lg text-body-lg mb-10 opacity-90 relative z-10 max-w-2xl mx-auto">Únete a miles de repartidores que ya están disfrutando de la libertad financiera con Eat For Less.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+<button class="bg-surface-container-lowest text-primary px-10 py-5 rounded-xl font-label-md hover:shadow-level-2 transition-soft active:scale-95">Empieza hoy mismo</button>
+<button class="bg-transparent border border-surface-container-lowest text-on-primary px-10 py-5 rounded-xl font-label-md hover:bg-white/10 transition-soft">Hablar con soporte</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20 transition-all duration-700 ease-out opacity-100 translate-y-0"><div class="bg-surface-container-low rounded-xl p-8 md:p-12 flex flex-col items-center text-center gap-4 border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-4xl">favorite</span><p class="font-headline-md text-headline-md text-on-surface max-w-2xl">Somos un proyecto pequeño, pero con la fe de llegar a ser grandes junto a ti.</p></div></section><footer class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-low dark:bg-surface-container-highest">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Eat For Less</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">© 2024 Eat For Less. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Driver Agreement</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Cookie Policy</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Apply initial hidden state to sections for scroll entrance
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
