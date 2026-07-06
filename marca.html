@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <title>Eat For Less </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#aef2c0",
+                        "tertiary-fixed-dim": "#c4c7c6",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e4945",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-container": "#d6e2dc",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed": "#d9e5df",
+                        "on-tertiary-container": "#343737",
+                        "surface-dim": "#dadada",
+                        "inverse-primary": "#93d5a5",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed": "#e1e3e2",
+                        "on-secondary-container": "#5a6560",
+                        "on-tertiary-fixed-variant": "#444747",
+                        "secondary-fixed-dim": "#bdc9c3",
+                        "on-primary-fixed-variant": "#0a522d",
+                        "primary-fixed-dim": "#93d5a5",
+                        "primary": "#2a6a43",
+                        "tertiary-container": "#9da09f",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#131e1a",
+                        "tertiary": "#5c5f5e",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary-container": "#003f20",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#191c1c",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#2a6a43",
+                        "primary-container": "#6cad80",
+                        "outline-variant": "#c0c9bf",
+                        "secondary": "#55615c",
+                        "on-surface-variant": "#404941",
+                        "on-primary-fixed": "#00210e",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "outline": "#707971",
+                        "on-background": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Poppins"],
+                        "label-sm": ["Poppins"],
+                        "headline-lg-mobile": ["Poppins"],
+                        "headline-xl": ["Poppins"],
+                        "label-md": ["Poppins"],
+                        "headline-md": ["Poppins"],
+                        "body-lg": ["Poppins"],
+                        "headline-lg": ["Poppins"],
+                        "body-sm": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05);
+        }
+        .premium-shadow {
+            box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08);
+        }
+        .hero-pattern {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#6cad80 0.5px, #f9f9f9 0.5px);
+            background-size: 10px 10px;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+<header class="w-full bg-white border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-10 py-4">
+        
+        <!-- Bloque Izquierdo: Logo e Identidad de Marca -->
+        <div class="flex items-center gap-2">
+            <img alt="Eat For Less Logo" class="h-10 w-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+            <!-- 
+              - font-headline-md: Llama a Poppins usando tu configuración.
+              - lowercase: Deja el texto en minúsculas calcando el logo de la imagen.
+              - tracking-tight: Junta levemente los caracteres para mayor fidelidad de marca.
+            -->
+            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight lowercase">
+                eat for less
+            </span>
+        </div>
+        
+        <!-- Bloque Central: Navegación Principal con fuentes de marca y efectos de cursor -->
+        <nav class="hidden md:flex items-center gap-1">
+            <!-- 
+              Efectos añadidos sobre las opciones:
+              - hover:bg-black/5 -> Genera el óvalo interactivo gris suave.
+              - hover:-translate-y-0.5 -> Eleva dinámicamente la opción 2px.
+              - transition-all duration-200 -> Suaviza el movimiento y el cambio de color.
+            -->
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5" href="Inicio.html">
+                Inicio
+            </a>
+            
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5" href="deals.html">
+                Ofertas
+            </a>
+            
+            <!-- Opción Activa Actual (Marca) con la pastilla de tu color primario diluido (bg-primary/15) -->
+            <a class="font-headline-md text-base text-primary font-bold bg-primary/15 px-4 py-2 rounded-full" href="marca.html">
+                Marca
+            </a>
+        </nav>
+
+        <!-- Bloque Derecho: Perfil y Menú Móvil -->
+        <div class="flex items-center gap-4">
+            <!-- Botón Perfil con la misma estética redondeada de las opciones -->
+            <button class="flex items-center gap-2 bg-black/5 hover:bg-black/10 text-on-surface-variant font-headline-md text-sm px-5 py-2 rounded-full transition-all duration-200">
+                <span class="material-symbols-outlined text-lg">person</span>
+                <span>Mi Perfil</span>
+            </button>
+
+            <!-- Menú hamburguesa para pantallas móviles -->
+            <span class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1" data-icon="menu">
+                menu
+            </span>
+        </div>
+
+    </div>
+</header>
+<main class="flex-grow pt-32 pb-20 w-full max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Section Desktop -->
+<div class="relative w-full h-[300px] rounded-3xl overflow-hidden mb-section-gap flex flex-col justify-center items-center bg-surface-container-low border border-surface-container">
+<div class="absolute inset-0 hero-pattern"></div>
+<div class="relative z-10 text-center px-8">
+<p class="font-label-md text-label-md text-primary uppercase tracking-[0.2em] mb-4">Nuestra Marca</p>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Comer mejor, gastar menos.</h2>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Llevamos la mejor gastronomía de la ciudad directamente a tu puerta con una rapidez inigualable.</p>
+</div>
+<div class="absolute -right-12 -bottom-12 opacity-5">
+<span class="material-symbols-outlined text-[300px]" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+<!-- Section: Quiénes somos, Misión, Visión (3 Column Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-section-gap">
+<!-- Quiénes somos -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl card-shadow border border-surface-container flex flex-col gap-6 hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-16 w-16 rounded-2xl bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="delivery_dining">delivery_dining</span>
+</div>
+<div class="flex flex-col gap-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Quiénes somos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Somos el servicio premier de delivery que redefine la experiencia gastronómica a domicilio. Conectamos la mejor oferta culinaria con una logística de última generación.
+                    </p>
+</div>
+</div>
+<!-- Misión -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl card-shadow border border-surface-container flex flex-col gap-6 hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-16 w-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-secondary" data-icon="speed">speed</span>
+</div>
+<div class="flex flex-col gap-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Misión</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Entregar los mejores sabores con la mayor rapidez y fiabilidad del mercado, garantizando que cada pedido llegue en perfectas condiciones a tu mesa.
+                    </p>
+</div>
+</div>
+<!-- Visión -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl card-shadow border border-surface-container flex flex-col gap-6 hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-16 w-16 rounded-2xl bg-tertiary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="flex flex-col gap-3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Visión</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Convertirnos en la plataforma de entrega de referencia mundial, innovando constantemente para ofrecer la mejor logística y variedad gastronómica.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section: Nuestros Valores (Desktop Grid) -->
+<section class="mb-section-gap">
+<div class="flex flex-col items-center text-center mb-12">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Nuestros Valores</h2>
+<div class="h-1 w-20 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Rapidez -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl card-shadow border border-surface-container flex flex-col items-center text-center gap-4 group hover:bg-primary/5 transition-colors">
+<div class="h-14 w-14 rounded-full bg-green-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Rapidez</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Entregas en tiempo récord.</p>
+</div>
+</div>
+<!-- Fiabilidad -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl card-shadow border border-surface-container flex flex-col items-center text-center gap-4 group hover:bg-secondary/5 transition-colors">
+<div class="h-14 w-14 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="verified">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Fiabilidad</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tus pedidos siempre bien.</p>
+</div>
+</div>
+<!-- Logística -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl card-shadow border border-surface-container flex flex-col items-center text-center gap-4 group hover:bg-tertiary/5 transition-colors">
+<div class="h-14 w-14 rounded-full bg-purple-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="map">map</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Logística</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tecnología de punta.</p>
+</div>
+</div>
+<!-- Variedad -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl card-shadow border border-surface-container flex flex-col items-center text-center gap-4 group hover:bg-on-secondary-container/5 transition-colors">
+<div class="h-14 w-14 rounded-full bg-orange-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="restaurant_menu">restaurant_menu</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Variedad</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Todo tipo de cocinas.</p>
+</div>
+</div>
+<!-- Excelencia -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl card-shadow border border-surface-container flex flex-col items-center text-center gap-4 group hover:bg-on-error-container/5 transition-colors">
+<div class="h-14 w-14 rounded-full bg-pink-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-error-container text-3xl" data-icon="award_star">award_star</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Excelencia</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Servicio impecable.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Propuesta de Valor (Wide Banner) -->
+<section class="mb-section-gap">
+<div class="bg-primary-container p-16 rounded-[2.5rem] premium-shadow relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="relative z-10 md:max-w-[60%]">
+<h2 class="font-headline-xl text-headline-xl text-on-primary-container mb-6">Propuesta de Valor</h2>
+<p class="font-body-lg text-body-lg text-white font-medium mb-8 leading-relaxed">
+                        Accede a la mayor variedad de restaurantes locales con el servicio de entrega más rápido del país. Calidad, velocidad y comodidad en un solo clic.
+                    </p>
+<button class="bg-on-primary-container text-primary-fixed px-10 py-4 rounded-full font-label-md hover:opacity-90 transition-opacity">Pedir Ahora</button>
+</div>
+<div class="relative z-10 hidden md:block">
+<span class="material-symbols-outlined text-[160px] text-white/30" data-icon="moped">moped</span>
+</div>
+<!-- Decorative Circles -->
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-on-primary-container/5 rounded-full"></div>
+</div>
+</section>
+<!-- Footer Desktop -->
+<footer class="w-full pt-16 pb-8 border-t border-surface-container mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<img alt="Footer Logo" class="h-8 w-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+<p class="font-headline-md text-headline-md font-bold text-primary">eat for less</p>
+</div>
+<p class="font-body-sm text-on-surface-variant">Transformando el consumo consciente de alimentos.</p>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold mb-6">Explora</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Ofertas del día</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Restaurantes</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sostenibilidad</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold mb-6">Marca</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sobre nosotros</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Prensa</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Carreras</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold mb-6">Síguenos</h4>
+<div class="flex gap-4">
+<div class="h-10 w-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="public">public</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="share">share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-surface-container-low text-center gap-4">
+<p class="font-body-sm text-on-surface-variant">© 2026 Eat For Less. Conscious Consumption.</p>
+<p class="font-body-sm text-primary font-medium tracking-widest">COME MÁS. PAGA MENOS.</p>
+<p class="font-body-sm text-on-surface-variant/60">Slogan: Eat Better, Spend Less</p>
+</div>
+</footer>
+</main>
+<script>
+        // Desktop micro-interactions
+        document.querySelectorAll('section div[class*="card-shadow"]').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+        });
+    </script>
+</body></html>
