@@ -1,151 +1,327 @@
-<!DOCTYPE html><html class="light" lang="es" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Repartidores | Eat For Less</title>
-<!-- Google Fonts: Poppins (Mandated by Design System) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<!-- Material Symbols (Literal Transcription Mandate) -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Eat For Less | Toda tu comida favorita</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                "surface-container-lowest": "#ffffff",
-                "secondary": "#55615c",
-                "primary-fixed": "#aef2c0",
-                "on-primary-container": "#003f20",
-                "secondary-fixed-dim": "#bdc9c3",
-                "on-tertiary-fixed-variant": "#444747",
-                "on-primary": "#ffffff",
-                "secondary-fixed": "#d9e5df",
-                "surface-container-highest": "#e2e2e2",
-                "outline": "#707971",
-                "inverse-primary": "#93d5a5",
-                "on-primary-fixed": "#00210e",
-                "surface-container": "#eeeeee",
-                "surface-variant": "#e2e2e2",
-                "on-secondary-fixed": "#131e1a",
-                "on-primary-fixed-variant": "#0a522d",
-                "on-secondary-fixed-variant": "#3e4945",
-                "surface-container-high": "#e8e8e8",
-                "tertiary": "#5c5f5e",
-                "on-secondary-container": "#5a6560",
-                "surface-container-low": "#f3f3f4",
-                "error-container": "#ffdad6",
-                "surface": "#f9f9f9",
-                "primary-container": "#6cad80",
-                "inverse-on-surface": "#f0f1f1",
-                "on-secondary": "#ffffff",
-                "on-tertiary-fixed": "#191c1c",
-                "background": "#f9f9f9",
-                "on-background": "#1a1c1c",
-                "surface-bright": "#f9f9f9",
-                "secondary-container": "#d6e2dc",
-                "on-surface-variant": "#404941",
-                "primary": "#2a6a43",
-                "on-tertiary-container": "#343737",
-                "inverse-surface": "#2f3131",
-                "on-error": "#ffffff",
-                "on-error-container": "#93000a",
-                "surface-dim": "#dadada",
-                "on-tertiary": "#ffffff",
-                "error": "#ba1a1a",
-                "outline-variant": "#c0c9bf",
-                "tertiary-fixed-dim": "#c4c7c6",
-                "on-surface": "#1a1c1c",
-                "tertiary-fixed": "#e1e3e2",
-                "tertiary-container": "#9da09f",
-                "primary-fixed-dim": "#93d5a5",
-                "surface-tint": "#2a6a43"
+                    "primary-container": "#6cad80",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#003f20",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-fixed": "#00210e",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "primary-fixed-dim": "#93d5a5",
+                    "on-tertiary-fixed": "#191c1c",
+                    "background": "#f9f9f9",
+                    "surface-container-low": "#f3f3f4",
+                    "tertiary-fixed": "#e1e3e2",
+                    "primary": "#2a6a43",
+                    "on-secondary-fixed": "#131e1a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#5c5f5e",
+                    "secondary-container": "#d6e2dc",
+                    "on-tertiary-container": "#343737",
+                    "secondary-fixed": "#d9e5df",
+                    "outline-variant": "#c0c9bf",
+                    "on-surface-variant": "#404941",
+                    "on-primary-fixed-variant": "#0a522d",
+                    "outline": "#707971",
+                    "tertiary-fixed-dim": "#c4c7c6",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary": "#55615c",
+                    "primary-fixed": "#aef2c0",
+                    "on-background": "#1a1c1c",
+                    "surface-container": "#eeeeee",
+                    "secondary-fixed-dim": "#bdc9c3",
+                    "on-secondary-fixed-variant": "#3e4945",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#2a6a43",
+                    "surface-dim": "#dadada",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "inverse-primary": "#93d5a5",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444747",
+                    "surface-variant": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#9da09f",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#5a6560"
             },
             "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "8px",
-                "xl": "12px",
-                "2xl": "24px",
-                "full": "9999px"
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
             },
             "spacing": {
-                "stack-sm": "8px",
-                "margin-mobile": "16px",
-                "stack-lg": "32px",
-                "margin-desktop": "40px",
-                "stack-md": "16px",
-                "container-max": "1200px",
-                "unit": "8px",
-                "gutter": "24px",
-                "section-gap": "80px"
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "section-gap": "80px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "container-max": "1200px"
             },
             "fontFamily": {
-                "body-md": ["Poppins"],
-                "headline-lg-mobile": ["Poppins"],
-                "body-lg": ["Poppins"],
-                "label-md": ["Poppins"],
-                "headline-lg": ["Poppins"],
-                "headline-xl": ["Poppins"],
-                "headline-md": ["Poppins"],
-                "label-sm": ["Poppins"],
-                "body-sm": ["Poppins"]
+                    "headline-xl": ["Poppins"],
+                    "headline-lg-mobile": ["Poppins"],
+                    "body-sm": ["Poppins"],
+                    "headline-md": ["Poppins"],
+                    "label-sm": ["Poppins"],
+                    "body-lg": ["Poppins"],
+                    "headline-lg": ["Poppins"],
+                    "label-md": ["Poppins"],
+                    "body-md": ["Poppins"]
             },
             "fontSize": {
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
             }
           },
         },
       }
     </script>
-<style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow-x: hidden;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
         .shadow-level-1 { box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05); }
         .shadow-level-2 { box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08); }
+        .shadow-level-3 { box-shadow: 0 20px 48px rgba(47, 58, 54, 0.12); }
         
-        .transition-soft { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        body { background-color: #f9f9f9; }
+        .floating-anim {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
-<body class="font-body-md text-on-surface selection:bg-primary-fixed">
-<!-- TopAppBar (From JSON) -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Eat For Less</div>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">Benefits</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">FAQ</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-opacity" href="#">Support</a>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md hover:opacity-80 transition-all duration-200 active:scale-95">Sign Up</button>
-</nav>
-<!-- Mobile Menu Icon -->
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
-</div>
+<body class="antialiased">
+
+<!-- TopAppBar -->
+<header class="w-full bg-white border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-10 py-4">
+        
+        <!-- Bloque Izquierdo: Logo (Protegido contra traducción) -->
+        <div class="flex items-center gap-2 shrink-0 notranslate" translate="no">
+            <img alt="Eat For Less Logo" class="h-10 w-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap">
+                eat for less
+            </span>
+        </div>
+        
+        <!-- Bloque Central: Navegación Principal -->
+        <nav class="hidden md:flex items-center gap-1">
+            <a class="font-headline-md text-base text-primary font-bold bg-primary/15 px-4 py-2 rounded-full whitespace-nowrap" href="Inicio.html">
+                Inicio
+            </a>
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="#como-funciona">
+                ¿Cómo funciona?
+            </a>
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="#beneficios">
+                Beneficios
+            </a>
+        </nav>
+
+        <!-- Bloque Derecho: Acciones -->
+        <div class="flex items-center gap-2 md:gap-3 shrink-0">
+            <!-- Botón Principal Verde (Descargar) -->
+            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white font-headline-md text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap shrink-0">
+                <span>Descargar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+
+            <!-- Selector de Idioma (Protegido contra traducción) -->
+            <div class="relative inline-block text-left notranslate" translate="no">
+                <div id="google_translate_element" class="hidden"></div>
+
+                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-headline-md text-sm px-3 py-2 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
+                    <span class="material-symbols-outlined text-lg notranslate" translate="no">language</span>
+                    <span id="selectedLangText">ES</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-200 notranslate" translate="no" id="langChevron">expand_more</span>
+                </button>
+
+                <!-- Menú Desplegable -->
+                <div id="langDropdown" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-2xl shadow-lg border border-black/5 py-1 z-50 transition-all duration-200">
+                    <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇪🇸</span> Español
+                    </button>
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇺🇸</span> English
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menú hamburguesa móvil -->
+            <span class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
+                menu
+            </span>
+        </div>
+
+    </div>
 </header>
-<main class="pt-24 overflow-x-hidden">
-<!-- Section 1: Hero -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row items-center gap-12 transition-all duration-700 ease-out opacity-100 translate-y-0">
-<div class="w-full md:w-1/2 order-2 md:order-1"><div class="inline-block bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full mb-4 font-label-sm text-label-sm">Sé un Repartidor</div><h1 class="font-headline-xl text-headline-xl md:text-[56px] leading-[1.1] mb-8 text-on-background">Gana dinero en tu propio horario</h1><form class="space-y-4 bg-white p-8 rounded-2xl shadow-level-1 border border-outline-variant/30"><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Nombre Completo</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="Tu nombre" type="text"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Correo Electrónico</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="ejemplo@correo.com" type="email"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Teléfono</label><input class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all" placeholder="+34 000 000 000" type="tel"></div><div class="flex flex-col gap-2"><label class="font-label-md text-on-surface-variant">Tipo de Vehículo</label><select class="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary transition-all"><option>Bicicleta</option><option>Moto</option><option>Coche</option></select><p class="text-label-sm text-secondary mt-1">* No necesitas licencia para repartir en bicicleta.</p></div><button class="w-full bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md flex items-center justify-center gap-2 hover:opacity-90 shadow-level-2 transition-soft mt-4" type="submit">Regístrate ahora<span class="material-symbols-outlined">arrow_forward</span></button></form></div>
-<div class="w-full md:w-1/2 order-1 md:order-2 relative md:scale-90">
-<div class="rounded-2xl overflow-hidden shadow-level-2 aspect-[4/3] relative">
-<img class="w-full h-full object-cover" data-alt="A focused young delivery rider wearing an orange t-shirt and a black cap, carrying two pizza boxes and a brown paper bag in an urban street setting. The lighting is soft and natural, emphasizing a professional yet approachable freelance atmosphere. The background features classic city brownstone buildings with subtle green accents that match the Eat For Less brand identity. The overall aesthetic is clean, minimalist, and high-quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITfLiObnqTh0DdV6QBy2q83j8mTbIA2Ea5Zrspm94k6HlLxug9FMeWRt11jQbzpcw1Nkc9j5MiYjciKB5G74hD6ZtSzJenxXdlfJsxMj-LpFGo9gOVApjlDmtmaT0dpUvOCgtN4Zjq1RL5o0dEC-2M46X8kULMnxfhp9_kuRFmnTYH13g_WFTfgW3MLzeFCnLIXyRB7sEz2fw5rEs0hL98Y_5nCah0kbkUMsZAK_41utOkWuc5EI8AYe2ptb8aqC5cBOPupaFwHciHh4">
+
+<style>
+    /* Ocultar elementos inyectados por Google Translate */
+    iframe.goog-te-banner-frame,
+    .goog-te-banner-frame,
+    .skiptranslate,
+    .VIpgJd-Z3124e,
+    #goog-gt-tt {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+    /* Prevenir estilizado de resaltado de traducción */
+    font {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'es,en',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    (function() {
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(gtScript);
+    })();
+
+    // Eliminar la barra de Google Translate y forzar posición limpia del body
+    const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.goog-te-banner-frame');
+        if (iframe) {
+            iframe.remove();
+        }
+        document.body.style.top = '0px';
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    function changeLanguage(langCode) {
+        if (langCode === 'es') {
+            // Eliminar cookie de traducción si existe para forzar estado original
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+            
+            // Disparar retorno a la versión original de la página
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'es';
+                select.dispatchEvent(new Event('change'));
+            }
+            
+            // Si la vista sigue con alteración de nodos, refrescar estado limpio
+            if (document.querySelector('font')) {
+                window.location.reload();
+                return;
+            }
+        } else {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+
+        document.getElementById('selectedLangText').textContent = langCode.toUpperCase();
+        document.getElementById('langDropdown').classList.add('hidden');
+        document.getElementById('langChevron').classList.remove('rotate-180');
+    }
+
+    const langBtn = document.getElementById('langMenuBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langChevron = document.getElementById('langChevron');
+
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('hidden');
+        langChevron.classList.toggle('rotate-180');
+    });
+
+    document.addEventListener('click', () => {
+        if (!langDropdown.classList.contains('hidden')) {
+            langDropdown.classList.add('hidden');
+            langChevron.classList.remove('rotate-180');
+        }
+    });
+</script>
+
+<main class="overflow-x-hidden">
+
+<!-- HERO Y CARD DE ACCESO OPTIMIZADA (FORMA PANORÁMICA Y ESPACIOSA) -->
+<section class="max-w-[1200px] mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] transition-all duration-700 ease-out opacity-100 translate-y-0">
+    
+    <!-- Encabezado del Hero Centrado -->
+  <!-- Reemplaza el bloque del encabezado del Hero por este -->
+<div class="text-center max-w-3xl mb-12 animate-fade-in">
+    <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full mb-5 text-xs font-semibold tracking-wide uppercase">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        Red de Repartidores
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-background leading-none">
+        Tu coche, tu moto, <span class="bg-gradient-to-r from-primary to-[#499966] bg-clip-text text-transparent">tu propio horario</span>
+    </h1>
+    <p class="text-base text-secondary mt-3 max-w-lg mx-auto font-normal">
+        Únete a la comunidad que te da el control total de tus ingresos y tu tiempo.
+    </p>
 </div>
-<!-- Decorative element -->
-<div class="absolute -z-10 -bottom-6 -right-6 w-64 h-64 bg-primary-fixed opacity-20 rounded-full blur-3xl"></div>
-<div class="mt-stack-lg p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20"><h3 class="font-headline-md text-headline-md mb-8 text-primary text-center md:text-left">Beneficios y Ventajas de ser Repartidor</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">schedule</span><span class="font-bold text-on-surface">Gana bajo tus propios términos</span></div><p class="text-body-sm text-secondary">Flexibilidad total de horarios para que trabajes cuando quieras.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">payments</span><span class="font-bold text-on-surface">Pagos competitivos y rápidos</span></div><p class="text-body-sm text-secondary">Acceso a tus ganancias semanalmente de forma segura.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">pedal_bike</span><span class="font-bold text-on-surface">Sin barreras de entrada</span></div><p class="text-body-sm text-secondary">Reparte en bicicleta sin necesidad de licencia ni trámites complejos.</p></div><div class="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2"><div class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined">support_agent</span><span class="font-bold text-on-surface">Soporte constante</span></div><p class="text-body-sm text-secondary">Equipo dedicado para ayudarte en cada entrega, 24/7.</p></div></div></div></div>
-</section>
+    
+   
+
 <!-- Section 2: Beneficios Clave -->
-<section class="bg-surface-container-low py-section-gap mt-stack-lg transition-all duration-700 ease-out opacity-100 translate-y-0">
+<section class="bg-surface-container-low py-section-gap transition-all duration-700 ease-out opacity-100 translate-y-0">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-16">
 <h2 class="font-headline-lg text-headline-lg mb-4">¿Por qué elegir Eat For Less?</h2>
@@ -155,7 +331,7 @@
 <!-- Column 1 -->
 <div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
 <div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
-<img class="w-12 h-12 object-contain" data-alt="A professional, minimalist delivery rider icon for Eat For Less Business. Stylized delivery bag symbol with clean lines and geometric shapes. The color is the brand's primary green #6cad80. The style is modern, tech-focused, and high-end startup aesthetic against a soft neutral background." src="https://lh3.googleusercontent.com/aida/AP1WRLvc-JHViI2EXR9ghtRK6jSlS8RC3WGQkDv2N7TJ75W4OWe9ESfDCb6kpAEpGhZMB12cnluVp-b95AeleM6ON2CeHAmXFgdg5HWq9tyZTvRmsot7s6OrtO3OckuPruLFE6qkuKEgk3nJc50b4afKV6PFERElPFZAl2pWxxqosg5zFf5toFHaOcrp3AC4MeOVkzPjFxjj1rYVIirF301TRodLZYnw3nUBx3k9BwYOAy0MiBRxZv4_kS0mzH_O">
+<img class="w-12 h-12 object-contain" data-alt="A professional, minimalist delivery rider icon..." src="https://lh3.googleusercontent.com/aida/AP1WRLvc-JHViI2EXR9ghtRK6jSlS8RC3WGQkDv2N7TJ75W4OWe9ESfDCb6kpAEpGhZMB12cnluVp-b95AeleM6ON2CeHAmXFgdg5HWq9tyZTvRmsot7s6OrtO3OckuPruLFE6qkuKEgk3nJc50b4afKV6PFERElPFZAl2pWxxqosg5zFf5toFHaOcrp3AC4MeOVkzPjFxjj1rYVIirF301TRodLZYnw3nUBx3k9BwYOAy0MiBRxZv4_kS0mzH_O">
 </div>
 <h3 class="font-headline-md text-headline-md mb-4">Horarios Flexibles</h3>
 <p class="font-body-sm text-body-sm text-secondary">Tú decides cuándo y cuánto tiempo trabajar. No hay turnos mínimos ni jefes que te vigilen.</p>
@@ -179,6 +355,7 @@
 </div>
 </div>
 </section>
+
 <!-- Section 3: Cómo funciona -->
 <section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 ease-out opacity-100 translate-y-0">
 <div class="flex flex-col md:flex-row gap-16 items-start">
@@ -191,7 +368,6 @@
 </button>
 </div>
 <div class="w-full md:w-2/3 grid grid-cols-1 gap-8 relative">
-<!-- Connector line (Desktop only) -->
 <div class="hidden md:block absolute left-8 top-12 bottom-12 w-0.5 bg-primary-container opacity-20"></div>
 <div class="flex gap-8 items-start relative bg-white p-8 rounded-2xl shadow-level-1">
 <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10">1</div>
@@ -213,6 +389,7 @@
 </div>
 </div>
 </section>
+
 <!-- Section 4: Requisitos -->
 <section class="py-section-gap bg-surface transition-all duration-700 ease-out opacity-100 translate-y-0">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -254,10 +431,10 @@
 </div>
 </div>
 </section>
+
 <!-- Section 5: CTA Final -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mb-20 transition-all duration-700 ease-out opacity-100 translate-y-0">
 <div class="relative bg-primary-container rounded-2xl p-12 md:p-24 overflow-hidden text-center text-on-primary">
-<!-- Background Pattern (Decorative) -->
 <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
 <h2 class="font-headline-xl text-headline-xl mb-6 relative z-10">¿Listo para conducir con nosotros?</h2>
 <p class="font-body-lg text-body-lg mb-10 opacity-90 relative z-10 max-w-2xl mx-auto">Únete a miles de repartidores que ya están disfrutando de la libertad financiera con Eat For Less.</p>
@@ -268,11 +445,12 @@
 </div>
 </section>
 </main>
-<!-- Footer (From JSON) -->
+
+<!-- Footer -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20 transition-all duration-700 ease-out opacity-100 translate-y-0"><div class="bg-surface-container-low rounded-xl p-8 md:p-12 flex flex-col items-center text-center gap-4 border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-4xl">favorite</span><p class="font-headline-md text-headline-md text-on-surface max-w-2xl">Somos un proyecto pequeño, pero con la fe de llegar a ser grandes junto a ti.</p></div></section><footer class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-low dark:bg-surface-container-highest">
 <div class="flex flex-col items-center md:items-start gap-4">
 <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Eat For Less</div>
-<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">© 2024 Eat For Less. All rights reserved.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">© 2026 Eat For Less. All rights reserved.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
 <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Privacy Policy</a>
@@ -281,8 +459,61 @@
 <a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Cookie Policy</a>
 </div>
 </footer>
+
 <script>
-        // Micro-interactions for buttons
+        // Función para controlar la Puerta Corrediza (Login vs Registro)
+        function toggleAuth(showRegister) {
+            const overlay = document.getElementById('sliding-overlay');
+            const loginPanel = document.getElementById('login-form-panel');
+            const registerPanel = document.getElementById('register-form-panel');
+            const overlayRegContent = document.getElementById('overlay-register-content');
+            const overlayLogContent = document.getElementById('overlay-login-content');
+
+            if (showRegister) {
+                // Modo Registro (La puerta corre a la izquierda)
+                overlay.classList.add('md:-translate-x-full');
+                
+                // Animación de los formularios
+                loginPanel.classList.remove('opacity-100', 'z-20', 'pointer-events-auto');
+                loginPanel.classList.add('opacity-0', 'z-10', 'pointer-events-none', 'md:translate-x-full');
+                
+                registerPanel.classList.remove('opacity-0', 'z-10', 'pointer-events-none');
+                registerPanel.classList.add('opacity-100', 'z-20', 'pointer-events-auto', 'md:translate-x-full');
+
+                // Cambiar el texto interior del overlay con fundido
+                overlayRegContent.classList.add('opacity-0', 'hidden');
+                overlayRegContent.classList.remove('opacity-100');
+                
+                overlayLogContent.classList.remove('hidden');
+                setTimeout(() => {
+                    overlayLogContent.classList.add('opacity-100');
+                    overlayLogContent.classList.remove('opacity-0', 'translate-x-10');
+                }, 50);
+
+            } else {
+                // Modo Login (La puerta corre a la derecha - estado por defecto)
+                overlay.classList.remove('md:-translate-x-full');
+
+                // Animación de los formularios
+                loginPanel.classList.add('opacity-100', 'z-20', 'pointer-events-auto');
+                loginPanel.classList.remove('opacity-0', 'z-10', 'pointer-events-none', 'md:translate-x-full');
+                
+                registerPanel.classList.add('opacity-0', 'z-10', 'pointer-events-none');
+                registerPanel.classList.remove('opacity-100', 'z-20', 'pointer-events-auto', 'md:translate-x-full');
+
+                // Cambiar el texto interior del overlay con fundido
+                overlayLogContent.classList.add('opacity-0', 'hidden');
+                overlayLogContent.classList.remove('opacity-100');
+                
+                overlayRegContent.classList.remove('hidden');
+                setTimeout(() => {
+                    overlayRegContent.classList.add('opacity-100');
+                    overlayRegContent.classList.remove('opacity-0');
+                }, 50);
+            }
+        }
+
+        // Micro-interacciones para botones genéricos
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('mousedown', () => {
                 button.classList.add('scale-95');
@@ -295,12 +526,12 @@
             });
         });
 
-        // Intersection Observer for scroll animations
+        // Intersection Observer para animaciones al hacer scroll
         const observerOptions = {
             threshold: 0.1
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer1 = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('opacity-100', 'translate-y-0');
@@ -309,10 +540,43 @@
             });
         }, observerOptions);
 
-        // Apply initial hidden state to sections for scroll entrance
         document.querySelectorAll('section').forEach(section => {
             section.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
+            observer1.observe(section);
         });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Abrir el menú quitando la clase 'hidden'
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+    }
+
+    // Cerrar el menú agregando de nuevo la clase 'hidden'
+    if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    }
+
+    // Cerrar automáticamente si el usuario hace clic fuera del menú lateral (en el fondo oscuro)
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    }
+});
     </script>
-</body></html>
+
+
+
+</body>
+</html>

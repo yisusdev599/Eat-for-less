@@ -132,61 +132,171 @@
     </style>
 </head>
 <body class="antialiased">
+<body class="antialiased !top-0 !relative">
+
 <!-- TopAppBar -->
 <header class="w-full bg-white border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-10 py-4">
         
-        <!-- Bloque Izquierdo: Logo e Identidad de Marca -->
-        <div class="flex items-center gap-2">
+        <!-- Bloque Izquierdo: Logo (Protegido contra traducción) -->
+        <div class="flex items-center gap-2 shrink-0 notranslate" translate="no">
             <img alt="Eat For Less Logo" class="h-10 w-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-            <!-- 
-              - font-headline-md: Llama a Poppins usando tu configuración.
-              - lowercase: Deja el texto en minúsculas calcando el logo de la imagen.
-              - tracking-tight: Junta levemente los caracteres para mayor fidelidad de marca.
-            -->
-            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight lowercase">
+            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap">
                 eat for less
             </span>
         </div>
         
-        <!-- Bloque Central: Navegación Principal con fuentes de marca y efectos de cursor -->
+        <!-- Bloque Central: Navegación Principal -->
         <nav class="hidden md:flex items-center gap-1">
-            <!-- 
-              Efectos añadidos sobre las opciones:
-              - hover:bg-black/5 -> Genera el óvalo interactivo gris suave.
-              - hover:-translate-y-0.5 -> Eleva dinámicamente la opción 2px.
-              - transition-all duration-200 -> Suaviza el movimiento y el cambio de color.
-            -->
-            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5" href="inicio.html">
+            <a class="font-headline-md text-base text-primary font-bold bg-primary/15 px-4 py-2 rounded-full whitespace-nowrap" href="inicio.html">
                 Inicio
             </a>
-            
-            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5" href="deals.html">
-                Ofertas
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="comofunciona.html">
+                ¿Cómo funciona?
             </a>
-            
-            <!-- Opción Activa Actual (Marca) con la pastilla de tu color primario diluido (bg-primary/15) -->
-            <a class="font-headline-md text-base text-primary font-bold bg-primary/15 px-4 py-2 rounded-full" href="marca.html">
-                Marca
+            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="beneficios.html">
+                Beneficios
             </a>
         </nav>
 
-        <!-- Bloque Derecho: Perfil y Menú Móvil -->
-        <div class="flex items-center gap-4">
-            <!-- Botón Perfil con la misma estética redondeada de las opciones -->
-            <button class="flex items-center gap-2 bg-black/5 hover:bg-black/10 text-on-surface-variant font-headline-md text-sm px-5 py-2 rounded-full transition-all duration-200">
-                <span class="material-symbols-outlined text-lg">person</span>
-                <span>Mi Perfil</span>
-            </button>
+        <!-- Bloque Derecho: Acciones -->
+        <div class="flex items-center gap-2 md:gap-3 shrink-0">
+            <!-- Botón Principal Verde (Descargar) -->
+            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white font-headline-md text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap shrink-0">
+                <span>Descargar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
 
-            <!-- Menú hamburguesa para pantallas móviles -->
-            <span class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1" data-icon="menu">
+            <!-- Selector de Idioma (Protegido contra traducción) -->
+            <div class="relative inline-block text-left notranslate" translate="no">
+                <div id="google_translate_element" class="hidden"></div>
+
+                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-headline-md text-sm px-3 py-2 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
+                    <span class="material-symbols-outlined text-lg notranslate" translate="no">language</span>
+                    <span id="selectedLangText">ES</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-200 notranslate" translate="no" id="langChevron">expand_more</span>
+                </button>
+
+                <!-- Menú Desplegable -->
+                <div id="langDropdown" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-2xl shadow-lg border border-black/5 py-1 z-50 transition-all duration-200">
+                    <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇪🇸</span> Español
+                    </button>
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇺🇸</span> English
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menú hamburguesa móvil -->
+            <span class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
                 menu
             </span>
         </div>
 
     </div>
 </header>
+
+<style>
+    /* Ocultar elementos inyectados por Google Translate */
+    iframe.goog-te-banner-frame,
+    .goog-te-banner-frame,
+    .skiptranslate,
+    .VIpgJd-Z3124e,
+    #goog-gt-tt {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+    /* Prevenir estilizado de resaltado de traducción */
+    font {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'es,en',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    (function() {
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(gtScript);
+    })();
+
+    // Eliminar la barra de Google Translate y forzar posición limpia del body
+    const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.goog-te-banner-frame');
+        if (iframe) {
+            iframe.remove();
+        }
+        document.body.style.top = '0px';
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    function changeLanguage(langCode) {
+        if (langCode === 'es') {
+            // Eliminar cookie de traducción si existe para forzar estado original
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+            
+            // Disparar retorno a la versión original de la página
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'es';
+                select.dispatchEvent(new Event('change'));
+            }
+            
+            // Si la vista sigue con alteración de nodos, refrescar estado limpio
+            if (document.querySelector('font')) {
+                window.location.reload();
+                return;
+            }
+        } else {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+
+        document.getElementById('selectedLangText').textContent = langCode.toUpperCase();
+        document.getElementById('langDropdown').classList.add('hidden');
+        document.getElementById('langChevron').classList.remove('rotate-180');
+    }
+
+    const langBtn = document.getElementById('langMenuBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langChevron = document.getElementById('langChevron');
+
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('hidden');
+        langChevron.classList.toggle('rotate-180');
+    });
+
+    document.addEventListener('click', () => {
+        if (!langDropdown.classList.contains('hidden')) {
+            langDropdown.classList.add('hidden');
+            langChevron.classList.remove('rotate-180');
+        }
+    });
+</script>
 <main class="pt-16">
 <!-- Hero Section -->
 <section class="relative min-h-[90vh] flex items-center overflow-hidden py-stack-lg">
@@ -609,39 +719,6 @@
 </div>
 </div>
 </footer>
-<!-- BottomNavBar for Mobile -->
-<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-margin-mobile bg-surface shadow-[0_-4px_20px_rgba(47,58,54,0.05)] rounded-t-xl z-50">
-<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-all duration-200">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-label-sm">Home</span>
-</button>
-<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant rounded-full px-4 py-1 active:scale-90 transition-all">
-<span class="material-symbols-outlined">search</span>
-<span class="font-label-sm text-label-sm">Search</span>
-</button>
-<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant rounded-full px-4 py-1 active:scale-90 transition-all">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="font-label-sm text-label-sm">Orders</span>
-</button>
-<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant rounded-full px-4 py-1 active:scale-90 transition-all">
-<span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-label-sm">Profile</span>
-</button>
-</div>
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section > div').forEach(el => {
-        el.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
-        observer.observe(el);
-    });
 
  </script>
 </body>
