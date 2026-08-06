@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Eat For Less | Toda tu comida favorita</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary-container": "#6cad80",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#003f20",
+              "inverse-on-surface": "#f0f1f1",
+              "surface-container-high": "#e8e8e8",
+              "surface-bright": "#f9f9f9",
+              "on-primary-fixed": "#00210e",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "primary-fixed-dim": "#93d5a5",
+              "on-tertiary-fixed": "#191c1c",
+              "background": "#f9f9f9",
+              "surface-container-low": "#f3f3f4",
+              "tertiary-fixed": "#e1e3e2",
+              "primary": "#2a6a43",
+              "on-secondary-fixed": "#131e1a",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#5c5f5e",
+              "secondary-container": "#d6e2dc",
+              "on-tertiary-container": "#343737",
+              "secondary-fixed": "#d9e5df",
+              "outline-variant": "#c0c9bf",
+              "on-surface-variant": "#404941",
+              "on-primary-fixed-variant": "#0a522d",
+              "outline": "#707971",
+              "tertiary-fixed-dim": "#c4c7c6",
+              "surface-container-highest": "#e2e2e2",
+              "secondary": "#55615c",
+              "primary-fixed": "#aef2c0",
+              "on-background": "#1a1c1c",
+              "surface-container": "#eeeeee",
+              "secondary-fixed-dim": "#bdc9c3",
+              "on-secondary-fixed-variant": "#3e4945",
+              "on-primary": "#ffffff",
+              "surface-tint": "#2a6a43",
+              "surface-dim": "#dadada",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1c1c",
+              "inverse-primary": "#93d5a5",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#444747",
+              "surface-variant": "#e2e2e2",
+              "surface": "#f9f9f9",
+              "error": "#ba1a1a",
+              "tertiary-container": "#9da09f",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#5a6560"
+            },
+            "spacing": {
+              "unit": "8px",
+              "stack-md": "16px",
+              "stack-lg": "32px",
+              "gutter": "24px",
+              "section-gap": "80px",
+              "stack-sm": "8px",
+              "margin-mobile": "16px",
+              "margin-desktop": "40px",
+              "container-max": "1200px"
+            },
+            "fontFamily": {
+              "sans": ["Poppins", "sans-serif"],
+              "headline-xl": ["Poppins", "sans-serif"],
+              "body-sm": ["Poppins", "sans-serif"],
+              "headline-md": ["Poppins", "sans-serif"],
+              "label-sm": ["Poppins", "sans-serif"],
+              "body-lg": ["Poppins", "sans-serif"],
+              "headline-lg": ["Poppins", "sans-serif"],
+              "label-md": ["Poppins", "sans-serif"],
+              "body-md": ["Poppins", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+        body {
+            font-family: 'Poppins', sans-serif !important;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow-x: hidden;
+            top: 0px !important;
+            position: static !important;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .shadow-level-1 { box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05); }
+        .shadow-level-2 { box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08); }
+        .shadow-level-3 { box-shadow: 0 20px 48px rgba(47, 58, 54, 0.12); }
+        
+        /* Animaciones */
+        .floating-anim {
+            animation: floating 3.5s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Reglas CSS para Google Translate */
+        iframe.goog-te-banner-frame,
+        .goog-te-banner-frame,
+        .skiptranslate,
+        .VIpgJd-Z3124e,
+        #goog-gt-tt {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+        font {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- TopAppBar -->
+<header class="w-full bg-white/95 backdrop-blur-md border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300 shadow-sm relative">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-6 py-3.5">
+        
+        <!-- Bloque Izquierdo: Logo y Marca (Alineado a la izquierda) -->
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0 group notranslate" translate="no">
+            <div class="relative overflow-hidden rounded-lg border border-black/5 p-0.5 group-hover:scale-105 transition-transform duration-200">
+                <img alt="Eat For Less Logo" class="h-9 w-9 md:h-10 md:w-10 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+            </div>
+            <span class="text-xl md:text-2xl font-black text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap group-hover:text-primary/90 transition-colors">
+                eat for less
+            </span>
+        </a>
+
+        <!-- Bloque Central: Navegación Principal (Tamaño Completo + Estado Activo) -->
+        <nav class="hidden md:flex items-center gap-1.5">
+            <!-- PÁGINA ACTUAL (Inicio): bg-primary/10 text-primary font-bold -->
+            <a class="text-base font-bold text-primary bg-primary/10 px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-200 hover:scale-105" href="index.html">
+                Inicio
+            </a>
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="comoFunciona.html">
+                ¿Cómo funciona?
+            </a>
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="beneficios.html">
+                Beneficios
+            </a>
+        </nav>
+
+        <!-- Bloque Derecho: Acciones -->
+        <div class="flex items-center gap-2 md:gap-3 shrink-0">
+            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white text-base font-semibold px-6 py-2.5 rounded-full transition-all duration-200 hover:scale-105 flex items-center gap-2 whitespace-nowrap shrink-0">
+                <span>Descargar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+
+            <!-- Selector de Idioma -->
+            <div class="relative inline-block text-left notranslate" translate="no">
+                <div id="google_translate_element" class="hidden"></div>
+
+                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary text-base px-3 py-2.5 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
+                    <span class="material-symbols-outlined text-xl notranslate" translate="no">language</span>
+                    <span id="selectedLangText">ES</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-200 notranslate" translate="no" id="langChevron">expand_more</span>
+                </button>
+
+                <div id="langDropdown" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-2xl shadow-lg border border-black/5 py-1 z-50 transition-all duration-200">
+                    <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇪🇸</span> Español
+                    </button>
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇺🇸</span> English
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botón del menú hamburguesa en el Navbar -->
+            <span id="mobile-menu-btn" class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
+                menu
+            </span>
+        </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-surface-container-high shadow-lg px-6 py-5 space-y-3 z-50">
+        <a href="index.html" class="block text-base font-semibold text-primary bg-primary/10 px-4 py-2.5 rounded-xl">Inicio</a>
+        <a href="comoFunciona.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">¿Cómo funciona?</a>
+        <a href="beneficios.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Beneficios</a>
+        
+        <div class="pt-3 border-t border-surface-container-high">
+            <a href="inforepartidor.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Sé un Repartidor</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Ocultar elementos inyectados por Google Translate */
+    iframe.goog-te-banner-frame,
+    .goog-te-banner-frame,
+    .skiptranslate,
+    .VIpgJd-Z3124e,
+    #goog-gt-tt {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+    /* Prevenir estilizado de resaltado de traducción */
+    font {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<script type="text/javascript">
+    (function() {
+        // Callback para inicialización de Google Translate
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        };
+
+        // Inyección dinámica de la API de Google Translate
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(gtScript);
+
+        // Limpiar el iframe de la barra superior de Google Translate
+        const observer = new MutationObserver(() => {
+            const iframe = document.querySelector('iframe.goog-te-banner-frame');
+            if (iframe) {
+                iframe.remove();
+            }
+            document.body.style.top = '0px';
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+
+        // Función global para cambiar el idioma de la vista
+        window.changeLanguage = function(langCode) {
+            if (langCode === 'es') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+                
+                var select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = 'es';
+                    select.dispatchEvent(new Event('change'));
+                }
+                
+                if (document.querySelector('font')) {
+                    window.location.reload();
+                    return;
+                }
+            } else {
+                var select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = langCode;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+
+            const selectedText = document.getElementById('selectedLangText');
+            const dropdown = document.getElementById('langDropdown');
+            const chevron = document.getElementById('langChevron');
+
+            if (selectedText) selectedText.textContent = langCode.toUpperCase();
+            if (dropdown) dropdown.classList.add('hidden');
+            if (chevron) chevron.classList.remove('rotate-180');
+        };
+
+        // Inicialización de event listeners cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtn = document.getElementById('langMenuBtn');
+            const langDropdown = document.getElementById('langDropdown');
+            const langChevron = document.getElementById('langChevron');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (langBtn && langDropdown && langChevron) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('hidden');
+                    langChevron.classList.toggle('rotate-180');
+                });
+            }
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuBtn.textContent = 'menu';
+                    } else {
+                        menuBtn.textContent = 'close';
+                    }
+                });
+            }
+
+            // Cerrar desplegables cuando se hace clic fuera de ellos
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && menuBtn && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.textContent = 'menu';
+                }
+                if (langDropdown && langBtn && langChevron && !langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                    langChevron.classList.remove('rotate-180');
+                }
+            });
+        });
+    })();
+</script>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden py-12 md:py-20">
+        <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+                    <span class="material-symbols-outlined text-[18px]">verified</span>
+                    <span>Lo mejor de tu ciudad</span>
+                </div>
+                <h1 class="font-headline-xl text-4xl md:text-6xl font-bold text-on-background leading-tight">
+                    Toda tu comida favorita en la palma de tu mano
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Descarga la app de Eat For Less y disfruta de entregas rápidas, precios increíbles y la mejor selección local.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4" id="descargar">
+                    <a class="flex items-center justify-center gap-3 bg-[#6cad80] text-white px-8 py-4 rounded-[16px] shadow-level-2 hover:shadow-level-3 hover:-translate-y-1 transition-all active:scale-95 group" href="#">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">apps</span>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase leading-none opacity-80">Descargar en</p>
+                            <p class="text-lg font-bold leading-none">App Store</p>
+                        </div>
+                    </a>
+                    <a class="flex items-center justify-center gap-3 bg-[#F5F7F6] text-[#2F3A36] px-8 py-4 rounded-[16px] shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all active:scale-95 group border-2 border-transparent hover:border-[#6cad80]" href="#">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase leading-none opacity-80">Disponible en</p>
+                            <p class="text-lg font-bold leading-none">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center items-center">
+                <div class="w-full h-[450px] md:h-[550px] rounded-[48px] overflow-hidden shadow-level-3 rotate-1 md:rotate-2 relative">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                        <source src="homevideo.mp4" type="video/mp4"/>
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="absolute bottom-6 left-6 glass-card p-6 rounded-[24px] shadow-level-2 max-w-[240px] floating-anim border border-white/40">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shrink-0 shadow-md">
+                                <span class="material-symbols-outlined">electric_moped</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-label-md font-bold">Entrega en Minutos</p>
+                                <p class="text-[11px] text-on-surface-variant">Tu pedido está en camino</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-[75%] rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/4 right-0 w-1/3 h-2/3 bg-primary-fixed opacity-10 rounded-l-full -z-10 blur-3xl"></div>
+    </section>
+
+   <!-- Features Section -->
+<section class="py-section-gap bg-white" id="features">
+    <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl text-on-background mb-4 font-bold">¿Por qué elegir Eat For Less?</h2>
+            <p class="text-lg text-on-surface-variant">Optimizamos cada paso del proceso para que disfrutes de comida de calidad sin pagar de más.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Feature 1 -->
+            <div class="p-10 rounded-[32px] bg-surface-container-low transition-colors duration-200 hover:bg-white border border-transparent hover:border-outline-variant">
+                <div class="w-16 h-16 rounded-[20px] bg-primary-container/20 flex items-center justify-center text-primary mb-8">
+                    <span class="material-symbols-outlined text-4xl">bolt</span>
+                </div>
+                <h3 class="text-2xl text-on-background mb-3 font-bold">Rápido y Confiable</h3>
+                <p class="text-base text-on-surface-variant leading-relaxed">Nuestra red de repartidores locales asegura que tu pedido llegue fresco y a tiempo, siempre.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="p-10 rounded-[32px] bg-surface-container-low transition-colors duration-200 hover:bg-white border border-transparent hover:border-outline-variant">
+                <div class="w-16 h-16 rounded-[20px] bg-primary-container/20 flex items-center justify-center text-primary mb-8">
+                    <span class="material-symbols-outlined text-4xl">payments</span>
+                </div>
+                <h3 class="text-2xl text-on-background mb-3 font-bold">Precios Transparentes</h3>
+                <p class="text-base text-on-surface-variant leading-relaxed">Sin tarifas ocultas ni sorpresas al final. Lo que ves es lo que pagas, garantizando el mejor valor.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="p-10 rounded-[32px] bg-surface-container-low transition-colors duration-200 hover:bg-white border border-transparent hover:border-outline-variant">
+                <div class="w-16 h-16 rounded-[20px] bg-primary-container/20 flex items-center justify-center text-primary mb-8">
+                    <span class="material-symbols-outlined text-4xl">support_agent</span>
+                </div>
+                <h3 class="text-2xl text-on-background mb-3 font-bold">Soporte 24/7</h3>
+                <p class="text-base text-on-surface-variant leading-relaxed">Estamos aquí para ayudarte en cualquier momento. Nuestro equipo de soporte está siempre disponible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Be a Driver Section -->
+<section class="py-section-gap bg-surface-container-lowest" id="driver">
+    <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+            <div class="rounded-[40px] overflow-hidden shadow-level-2 hover:shadow-level-3 transition-shadow duration-300">
+                <img alt="Flexible Delivery Driver" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500" src="https://i.postimg.cc/Y0wjYg35/pexels-mike-jones-9461606.jpg"/>
+            </div>
+        </div>
+        <div class="space-y-6 order-1 md:order-2">
+            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md font-semibold">Sé un Repartidor</span>
+            <h2 class="font-headline-lg text-headline-lg font-bold text-on-background">Conduce cuando quieras, gana lo que necesites</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Sé tu propio jefe. Con Eat For Less, tienes la flexibilidad de trabajar en tu propio horario mientras recibes pagos rápidos y competitivos.</p>
+            <ul class="space-y-4">
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-full text-lg notranslate" translate="no">schedule</span>
+                    <span class="font-body-md font-medium">Horarios 100% flexibles</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-full text-lg notranslate" translate="no">account_balance_wallet</span>
+                    <span class="font-body-md font-medium">Pagos rápidos y transparentes</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-full text-lg notranslate" translate="no">speed</span>
+                    <span class="font-body-md font-medium">Registro fácil y directo</span>
+                </li>
+            </ul>
+            
+            <!-- Botón con redirección a inforepartidor.html -->
+            <a class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[16px] font-bold hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-md active:scale-95" href="inforepartidor.html">
+                <span>Empieza a conducir</span>
+                <span class="material-symbols-outlined notranslate" translate="no">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+    
+<!-- Banner Institucional Grande Verde de Marca -->
+<section class="py-12 px-4 md:px-10 max-w-[1400px] mx-auto">
+    <div class="bg-primary rounded-[36px] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
+        
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-black/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            
+            <!-- Columna Izquierda: Mensaje Principal -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full">
+                    <span class="text-xs font-bold uppercase tracking-wider text-white">Nuestra Historia</span>
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                    Diseñado para transformar el delivery local
+                </h2>
+
+                <p class="text-base md:text-lg text-white/90 leading-relaxed font-normal max-w-2xl">
+                    Eat for Less comenzó con una visión simple: conectar a la comunidad con los mejores restaurantes sin las comisiones excesivas que inflan los precios. Traemos un estándar de transparencia, velocidad y tarifas justas para beneficiar tanto a clientes como a comercios locales.
+                </p>
+
+                <!-- Badges / Destacados -->
+                <div class="pt-2 flex flex-wrap gap-3">
+                    <div class="flex items-center gap-2 text-xs font-semibold bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-2.5 rounded-2xl text-white">
+                        <span class="material-symbols-outlined text-lg notranslate" translate="no">verified</span>
+                        <span>Precios Justos Garantizados</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-2.5 rounded-2xl text-white">
+                        <span class="material-symbols-outlined text-lg notranslate" translate="no">storefront</span>
+                        <span>Apoyo al Comercio Local</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta de Compromiso -->
+            <div class="lg:col-span-5">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl space-y-6 shadow-lg">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-white text-primary flex items-center justify-center shrink-0 shadow-md">
+                            <span class="material-symbols-outlined text-2xl notranslate" translate="no">favorite</span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">Compromiso con la Calidad</h3>
+                            <p class="text-xs text-white/80">Servicio diseñado para la comunidad</p>
+                        </div>
+                    </div>
+                    
+                    <hr class="border-white/15"/>
+                    
+                    <p class="text-sm text-white/90 leading-relaxed italic font-light">
+                        "Queremos que disfrutar de tu comida favorita sea una experiencia accesible todos los días, no un lujo ocasional."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+  <!-- Sección Restaurantes / Aliados (Adaptada a Prelanzamiento) -->
+<section class="py-16 px-4 md:px-10 max-w-[1400px] mx-auto" id="restaurantes">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white rounded-3xl p-8 md:p-12">
+        
+        <!-- Columna Izquierda: Información y Beneficios -->
+        <div class="space-y-6">
+            <!-- Badge -->
+            <div>
+                <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-xs">
+                    Asóciate con nosotros
+                </span>
+            </div>
+
+            <!-- Titular -->
+            <h2 class="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
+                Impulsa tu restaurante al siguiente nivel
+            </h2>
+
+            <!-- Descripción realista -->
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                Prepara tu negocio para conectar con miles de clientes. Diseñamos un modelo enfocado en apoyar al comercio local con tarifas claras y comisiones competitivas para que mantengas la rentabilidad de tus platillos.
+            </p>
+
+            <!-- Bloques sustitutos de las métricas (+40% y 24/7) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <!-- Bloque 1 (Sustituye +40%) -->
+                <div class="bg-surface-container-low p-5 rounded-2xl border border-black/5">
+                    <div class="text-primary font-extrabold text-xl mb-1 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-xl notranslate" translate="no">percent</span>
+                        <span>Justas</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant font-medium">
+                        Comisiones bajas diseñadas para cuidar tus márgenes.
+                    </p>
+                </div>
+
+                <!-- Bloque 2 (Sustituye 24/7) -->
+                <div class="bg-surface-container-low p-5 rounded-2xl border border-black/5">
+                    <div class="text-primary font-extrabold text-xl mb-1 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-xl notranslate" translate="no">rocket_launch</span>
+                        <span>Prioridad</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant font-medium">
+                        Mayor visibilidad como aliado inicial en el lanzamiento.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botón de Contacto (Sustituye "Registra tu negocio") -->
+            <div class="pt-2">
+                <a href="mailto:soporte@eatforless.com?subject=Interes%20en%20sumarme%20como%20Restaurante%20Aliado" class="inline-flex items-center gap-2.5 bg-surface-container-highest text-on-surface hover:bg-black hover:text-white font-bold px-7 py-3.5 rounded-2xl transition-all duration-200 active:scale-95 text-sm shadow-sm">
+                    <span>Quiero sumarme como aliado</span>
+                    <span class="material-symbols-outlined text-lg notranslate" translate="no">storefront</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Imagen del Platillo -->
+        <div class="rounded-[32px] overflow-hidden shadow-lg border border-black/5">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Hamburguesa de restaurante aliado" 
+                 class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"/>
+        </div>
+
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+    <section class="py-section-gap bg-white" id="faq">
+        <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg font-bold text-on-background mb-4">Preguntas Frecuentes</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">Todo lo que necesitas saber antes de realizar tu primer pedido.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-surface-container-low p-6 rounded-[24px] [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-lg text-on-background">
+                        <span>¿Cómo realizo un pedido?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-on-surface-variant leading-relaxed">
+                        Solo debes descargar la app, registrarte con tu correo o número de teléfono, seleccionar tu restaurante preferido, añadir los platillos al carrito y elegir tu método de pago.
+                    </p>
+                </details>
+
+                <details class="group bg-surface-container-low p-6 rounded-[24px] [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-lg text-on-background">
+                        <span>¿Qué métodos de pago son aceptados?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-on-surface-variant leading-relaxed">
+                        Aceptamos tarjetas de crédito y débito (Visa, Mastercard), transferencias bancarias locales y pago en efectivo al momento de recibir la entrega.
+                    </p>
+                </details>
+
+                <details class="group bg-surface-container-low p-6 rounded-[24px] [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-lg text-on-background">
+                        <span>¿Cómo puedo ser un repartidor o registrar mi negocio?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-on-surface-variant leading-relaxed">
+                        En nuestro sitio web encontrarás los botones de "Sé un Repartidor" y "Registra tu negocio". Completa el formulario de solicitud y nuestro equipo te contactará en menos de 24 horas.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Extendido -->
+<footer class="bg-white border-t border-surface-container-high pt-10 pb-8 w-full">
+    <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+        
+        <!-- Grid Principal -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-10">
+            
+            <!-- Marca: Ocupa el ancho completo arriba en móvil -->
+            <div class="md:col-span-4 space-y-3 pb-6 md:pb-0 border-b md:border-none border-surface-container-high">
+                <a href="index.html" class="inline-flex items-center gap-2 notranslate" translate="no">
+                    <img alt="Eat For Less Logo" class="h-8 w-8 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+                    <span class="font-bold text-primary text-xl lowercase tracking-tight">eat for less</span>
+                </a>
+                <p class="text-xs text-on-surface-variant leading-relaxed max-w-sm">
+                    La plataforma de entrega gastronómica diseñada para conectar clientes, restaurantes y repartidores locales de manera justa y eficiente.
+                </p>
+            </div>
+
+            <!-- Contenedor de Enlaces: Grid Móvil Simétrico (2 columnas parejas) -->
+            <div class="md:col-span-8 grid grid-cols-2 gap-x-6 gap-y-8">
+                
+                <!-- Columna 1: Navegación -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Navegación</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="index.html" class="hover:text-primary transition-colors block">Inicio</a></li>
+                        <li><a href="comofunciona.html" class="hover:text-primary transition-colors block">¿Cómo funciona?</a></li>
+                        <li><a href="beneficios.html" class="hover:text-primary transition-colors block">Beneficios</a></li>
+                        <li><a href="#features" class="hover:text-primary transition-colors block">Características</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Únete -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Únete</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="inforepartidor.html" class="hover:text-primary transition-colors block">Sé un Repartidor</a></li>
+                        <li><a href="#restaurantes" class="hover:text-primary transition-colors block">Registra tu Restaurante</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 (Ocupa las 2 columnas en móvil para alinearse perfectamente y abarcar todo el ancho) -->
+                <div class="col-span-2 sm:col-span-1 pt-2 sm:pt-0 border-t sm:border-none border-surface-container-high">
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Legal & Soporte</h4>
+                    <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2 text-xs text-on-surface-variant">
+                        <li><a href="#" class="hover:text-primary transition-colors block">Términos y Cond.</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors block">Privacidad</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors block">Preguntas Frecuentes</a></li>
+                        <li><a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors block">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Barra Inferior -->
+        <div class="border-t border-surface-container-high pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <p class="text-xs text-on-surface-variant">© 2026 Eat For Less. Todos los derechos reservados.</p>
+            <div class="flex items-center gap-5 text-on-surface-variant">
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Compartir"><span class="material-symbols-outlined text-lg notranslate" translate="no">share</span></a>
+                <a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors p-1" aria-label="Correo"><span class="material-symbols-outlined text-lg notranslate" translate="no">mail</span></a>
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Llamar"><span class="material-symbols-outlined text-lg notranslate" translate="no">call</span></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'es,en',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    (function() {
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(gtScript);
+    })();
+
+    const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.goog-te-banner-frame');
+        if (iframe) {
+            iframe.remove();
+        }
+        document.body.style.top = '0px';
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    function changeLanguage(langCode) {
+        if (langCode === 'es') {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+            
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'es';
+                select.dispatchEvent(new Event('change'));
+            }
+            
+            if (document.querySelector('font')) {
+                window.location.reload();
+                return;
+            }
+        } else {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+
+        document.getElementById('selectedLangText').textContent = langCode.toUpperCase();
+        document.getElementById('langDropdown').classList.add('hidden');
+        document.getElementById('langChevron').classList.remove('rotate-180');
+    }
+
+    const langBtn = document.getElementById('langMenuBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langChevron = document.getElementById('langChevron');
+
+    if (langBtn) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('hidden');
+            langChevron.classList.toggle('rotate-180');
+        });
+    }
+
+    document.addEventListener('click', () => {
+        if (langDropdown && !langDropdown.classList.contains('hidden')) {
+            langDropdown.classList.add('hidden');
+            langChevron.classList.remove('rotate-180');
+        }
+    });
+</script>
+</body>
+</html>

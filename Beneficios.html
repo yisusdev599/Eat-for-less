@@ -260,51 +260,54 @@
 <body class="antialiased">
 
 <!-- TopAppBar -->
-<header class="w-full bg-white border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-10 py-4">
+<header class="w-full bg-white/95 backdrop-blur-md border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300 shadow-sm relative">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-6 py-3.5">
         
-        <!-- Bloque Izquierdo: Logo (Protegido contra traducción) -->
-        <div class="flex items-center gap-2 shrink-0 notranslate" translate="no">
-            <img alt="Eat For Less Logo" class="h-10 w-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap">
+        <!-- Bloque Izquierdo: Logo y Marca (Alineado a la izquierda) -->
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0 group notranslate" translate="no">
+            <div class="relative overflow-hidden rounded-lg border border-black/5 p-0.5 group-hover:scale-105 transition-transform duration-200">
+                <img alt="Eat For Less Logo" class="h-9 w-9 md:h-10 md:w-10 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+            </div>
+            <span class="text-xl md:text-2xl font-black text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap group-hover:text-primary/90 transition-colors">
                 eat for less
             </span>
-        </div>
-        
-        <!-- Bloque Central: Navegación Principal -->
-        <nav class="hidden md:flex items-center gap-1">
-            <a class="font-headline-md text-base text-primary font-bold bg-primary/15 px-4 py-2 rounded-full whitespace-nowrap" href="Inicio.html">
+        </a>
+
+        <!-- Bloque Central: Navegación Principal (Tamaño Completo + Estado Activo) -->
+        <nav class="hidden md:flex items-center gap-1.5">
+            <!-- PÁGINA ACTUAL (Inicio): bg-primary/10 text-primary font-bold -->
+            <a class="text-base font-bold text-primary bg-primary/10 px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-200 hover:scale-105" href="index.html">
                 Inicio
             </a>
-            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="#como-funciona">
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="comoFunciona.html">
                 ¿Cómo funciona?
             </a>
-            <a class="font-headline-md text-base text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap" href="#beneficios">
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="beneficios.html">
                 Beneficios
             </a>
         </nav>
 
         <!-- Bloque Derecho: Acciones -->
         <div class="flex items-center gap-2 md:gap-3 shrink-0">
-            <!-- Botón Principal Verde (Descargar) -->
-            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white font-headline-md text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap shrink-0">
+            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white text-base font-semibold px-6 py-2.5 rounded-full transition-all duration-200 hover:scale-105 flex items-center gap-2 whitespace-nowrap shrink-0">
                 <span>Descargar</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
             </a>
 
-            <!-- Selector de Idioma (Protegido contra traducción) -->
+            <!-- Selector de Idioma -->
             <div class="relative inline-block text-left notranslate" translate="no">
                 <div id="google_translate_element" class="hidden"></div>
 
-                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-headline-md text-sm px-3 py-2 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
-                    <span class="material-symbols-outlined text-lg notranslate" translate="no">language</span>
+                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary text-base px-3 py-2.5 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
+                    <span class="material-symbols-outlined text-xl notranslate" translate="no">language</span>
                     <span id="selectedLangText">ES</span>
                     <span class="material-symbols-outlined text-sm transition-transform duration-200 notranslate" translate="no" id="langChevron">expand_more</span>
                 </button>
 
-                <!-- Menú Desplegable -->
                 <div id="langDropdown" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-2xl shadow-lg border border-black/5 py-1 z-50 transition-all duration-200">
                     <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
                         <span>🇪🇸</span> Español
@@ -315,12 +318,22 @@
                 </div>
             </div>
 
-            <!-- Menú hamburguesa móvil -->
-            <span class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
+            <!-- Botón del menú hamburguesa en el Navbar -->
+            <span id="mobile-menu-btn" class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
                 menu
             </span>
         </div>
+    </div>
 
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-surface-container-high shadow-lg px-6 py-5 space-y-3 z-50">
+        <a href="index.html" class="block text-base font-semibold text-primary bg-primary/10 px-4 py-2.5 rounded-xl">Inicio</a>
+        <a href="comoFunciona.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">¿Cómo funciona?</a>
+        <a href="beneficios.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Beneficios</a>
+        
+        <div class="pt-3 border-t border-surface-container-high">
+            <a href="inforepartidor.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Sé un Repartidor</a>
+        </div>
     </div>
 </header>
 
@@ -376,18 +389,15 @@
 
     function changeLanguage(langCode) {
         if (langCode === 'es') {
-            // Eliminar cookie de traducción si existe para forzar estado original
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
             
-            // Disparar retorno a la versión original de la página
             var select = document.querySelector('.goog-te-combo');
             if (select) {
                 select.value = 'es';
                 select.dispatchEvent(new Event('change'));
             }
             
-            // Si la vista sigue con alteración de nodos, refrescar estado limpio
             if (document.querySelector('font')) {
                 window.location.reload();
                 return;
@@ -415,12 +425,34 @@
         langChevron.classList.toggle('rotate-180');
     });
 
-    document.addEventListener('click', () => {
-        if (!langDropdown.classList.contains('hidden')) {
-            langDropdown.classList.add('hidden');
-            langChevron.classList.remove('rotate-180');
-        }
-    });
+    // Lógica para abrir/cerrar Menú Hamburguesa
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+
+            if (mobileMenu.classList.contains('hidden')) {
+                menuBtn.textContent = 'menu';
+            } else {
+                menuBtn.textContent = 'close';
+            }
+        });
+
+        // Cerrar menú al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.textContent = 'menu';
+            }
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+                langDropdown.classList.add('hidden');
+                langChevron.classList.remove('rotate-180');
+            }
+        });
+    }
 </script>
 
 <main>
@@ -602,24 +634,77 @@
 </section>
 
 </main>
-<!-- Footer -->
-<footer class="w-full rounded-t-[24px] bg-surface-container-low dark:bg-surface-container-highest mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-md md:px-margin-desktop px-margin-mobile">
-<!-- Brand Logo -->
-<div class="font-headline-md text-headline-md font-bold text-primary">
-                Eat For Less
+<!-- Footer Extendido -->
+<footer class="bg-white border-t border-surface-container-high pt-10 pb-8 w-full">
+    <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+        
+        <!-- Grid Principal -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-10">
+            
+            <!-- Marca: Ocupa el ancho completo arriba en móvil -->
+            <div class="md:col-span-4 space-y-3 pb-6 md:pb-0 border-b md:border-none border-surface-container-high">
+                <a href="index.html" class="inline-flex items-center gap-2 notranslate" translate="no">
+                    <img alt="Eat For Less Logo" class="h-8 w-8 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+                    <span class="font-bold text-primary text-xl lowercase tracking-tight">eat for less</span>
+                </a>
+                <p class="text-xs text-on-surface-variant leading-relaxed max-w-sm">
+                    La plataforma de entrega gastronómica diseñada para conectar clientes, restaurantes y repartidores locales de manera justa y eficiente.
+                </p>
             </div>
-<!-- Links -->
-<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary underline-offset-4" href="#">Privacidad</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary underline-offset-4" href="#">Términos</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary underline-offset-4" href="#">Contacto</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary underline-offset-4" href="#">Preguntas Frecuentes</a>
-</nav>
-<!-- Copyright -->
-<div class="font-body-sm text-body-sm text-on-surface-variant opacity-100 hover:opacity-80 transition-opacity">
-                © 2026 Eat For Less. Todos los derechos reservados.
+
+            <!-- Contenedor de Enlaces: Grid Móvil Simétrico (2 columnas parejas) -->
+            <div class="md:col-span-8 grid grid-cols-2 gap-x-6 gap-y-8">
+                
+                <!-- Columna 1: Navegación -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Navegación</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="index.html" class="hover:text-primary transition-colors block">Inicio</a></li>
+                        <li><a href="comofunciona.html" class="hover:text-primary transition-colors block">¿Cómo funciona?</a></li>
+                        <li><a href="beneficios.html" class="hover:text-primary transition-colors block">Beneficios</a></li>
+                        <li><a href="#features" class="hover:text-primary transition-colors block">Características</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Únete -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Únete</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="inforepartidor.html" class="hover:text-primary transition-colors block">Sé un Repartidor</a></li>
+                        <li><a href="#restaurantes" class="hover:text-primary transition-colors block">Registra tu Restaurante</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 (Ocupa las 2 columnas en móvil para alinearse perfectamente y abarcar todo el ancho) -->
+                <div class="col-span-2 sm:col-span-1 pt-2 sm:pt-0 border-t sm:border-none border-surface-container-high">
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Legal & Soporte</h4>
+                    <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2 text-xs text-on-surface-variant">
+                        <li><a href="#" class="hover:text-primary transition-colors block">Términos y Cond.</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors block">Privacidad</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors block">Preguntas Frecuentes</a></li>
+                        <li><a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors block">Contacto</a></li>
+                    </ul>
+                </div>
+
             </div>
-</div>
+
+        </div>
+
+        <!-- Barra Inferior -->
+        <div class="border-t border-surface-container-high pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <p class="text-xs text-on-surface-variant">© 2026 Eat For Less. Todos los derechos reservados.</p>
+            <div class="flex items-center gap-5 text-on-surface-variant">
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Compartir"><span class="material-symbols-outlined text-lg notranslate" translate="no">share</span></a>
+                <a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors p-1" aria-label="Correo"><span class="material-symbols-outlined text-lg notranslate" translate="no">mail</span></a>
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Llamar"><span class="material-symbols-outlined text-lg notranslate" translate="no">call</span></a>
+            </div>
+        </div>
+
+    </div>
 </footer>
-</body></html>
+
+
+
+</body>
+</html>
+

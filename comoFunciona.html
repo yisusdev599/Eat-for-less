@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Eat For Less | Toda tu comida favorita</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary-container": "#6cad80",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#003f20",
+              "inverse-on-surface": "#f0f1f1",
+              "surface-container-high": "#e8e8e8",
+              "surface-bright": "#f9f9f9",
+              "on-primary-fixed": "#00210e",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "primary-fixed-dim": "#93d5a5",
+              "on-tertiary-fixed": "#191c1c",
+              "background": "#f9f9f9",
+              "surface-container-low": "#f3f3f4",
+              "tertiary-fixed": "#e1e3e2",
+              "primary": "#2a6a43",
+              "on-secondary-fixed": "#131e1a",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#5c5f5e",
+              "secondary-container": "#d6e2dc",
+              "on-tertiary-container": "#343737",
+              "secondary-fixed": "#d9e5df",
+              "outline-variant": "#c0c9bf",
+              "on-surface-variant": "#404941",
+              "on-primary-fixed-variant": "#0a522d",
+              "outline": "#707971",
+              "tertiary-fixed-dim": "#c4c7c6",
+              "surface-container-highest": "#e2e2e2",
+              "secondary": "#55615c",
+              "primary-fixed": "#aef2c0",
+              "on-background": "#1a1c1c",
+              "surface-container": "#eeeeee",
+              "secondary-fixed-dim": "#bdc9c3",
+              "on-secondary-fixed-variant": "#3e4945",
+              "on-primary": "#ffffff",
+              "surface-tint": "#2a6a43",
+              "surface-dim": "#dadada",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1c1c",
+              "inverse-primary": "#93d5a5",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#444747",
+              "surface-variant": "#e2e2e2",
+              "surface": "#f9f9f9",
+              "error": "#ba1a1a",
+              "tertiary-container": "#9da09f",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#5a6560"
+            },
+            "spacing": {
+              "unit": "8px",
+              "stack-md": "16px",
+              "stack-lg": "32px",
+              "gutter": "24px",
+              "section-gap": "80px",
+              "stack-sm": "8px",
+              "margin-mobile": "16px",
+              "margin-desktop": "40px",
+              "container-max": "1200px"
+            },
+            "fontFamily": {
+              "sans": ["Poppins", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+        body {
+            font-family: 'Poppins', sans-serif !important;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow-x: hidden;
+            top: 0px !important;
+            position: static !important;
+        }
+        
+        /* Protección contra roturas por Google Translate */
+        .material-symbols-outlined,
+        .material-icons,
+        [data-icon] {
+            font-family: 'Material Symbols Outlined' !important;
+            direction: ltr !important;
+            unicode-bidi: isolate !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .notranslate, [translate="no"] {
+            -webkit-translate: no !important;
+            translate: no !important;
+        }
+
+        /* Reglas CSS para ocultar barra de Google Translate */
+        iframe.goog-te-banner-frame,
+        .goog-te-banner-frame,
+        .skiptranslate,
+        .VIpgJd-Z3124e,
+        #goog-gt-tt {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+        font {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+<!-- TopAppBar -->
+<header class="w-full bg-white/95 backdrop-blur-md border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300 shadow-sm relative">
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-6 py-3.5">
+        
+        <!-- Bloque Izquierdo: Logo y Marca (Alineado a la izquierda) -->
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0 group notranslate" translate="no">
+            <div class="relative overflow-hidden rounded-lg border border-black/5 p-0.5 group-hover:scale-105 transition-transform duration-200">
+                <img alt="Eat For Less Logo" class="h-9 w-9 md:h-10 md:w-10 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+            </div>
+            <span class="text-xl md:text-2xl font-black text-primary dark:text-primary-fixed tracking-tight lowercase whitespace-nowrap group-hover:text-primary/90 transition-colors">
+                eat for less
+            </span>
+        </a>
+
+        <!-- Bloque Central: Navegación Principal (Tamaño Completo + Estado Activo) -->
+        <nav class="hidden md:flex items-center gap-1.5">
+            <!-- PÁGINA ACTUAL (Inicio): bg-primary/10 text-primary font-bold -->
+            <a class="text-base font-bold text-primary bg-primary/10 px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-200 hover:scale-105" href="index.html">
+                Inicio
+            </a>
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="comoFunciona.html">
+                ¿Cómo funciona?
+            </a>
+            
+            <a class="text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105" href="beneficios.html">
+                Beneficios
+            </a>
+        </nav>
+
+        <!-- Bloque Derecho: Acciones -->
+        <div class="flex items-center gap-2 md:gap-3 shrink-0">
+            <a href="#descargar" class="bg-primary hover:bg-primary/90 text-white text-base font-semibold px-6 py-2.5 rounded-full transition-all duration-200 hover:scale-105 flex items-center gap-2 whitespace-nowrap shrink-0">
+                <span>Descargar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-current shrink-0 notranslate" translate="no" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+
+            <!-- Selector de Idioma -->
+            <div class="relative inline-block text-left notranslate" translate="no">
+                <div id="google_translate_element" class="hidden"></div>
+
+                <button id="langMenuBtn" type="button" class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary text-base px-3 py-2.5 rounded-full transition-all duration-200 hover:bg-black/5 whitespace-nowrap font-medium cursor-pointer">
+                    <span class="material-symbols-outlined text-xl notranslate" translate="no">language</span>
+                    <span id="selectedLangText">ES</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-200 notranslate" translate="no" id="langChevron">expand_more</span>
+                </button>
+
+                <div id="langDropdown" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-2xl shadow-lg border border-black/5 py-1 z-50 transition-all duration-200">
+                    <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇪🇸</span> Español
+                    </button>
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-2 cursor-pointer">
+                        <span>🇺🇸</span> English
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botón del menú hamburguesa en el Navbar -->
+            <span id="mobile-menu-btn" class="material-symbols-outlined md:hidden text-primary cursor-pointer transition-transform duration-200 hover:scale-110 p-1 select-none ml-1 notranslate" translate="no" data-icon="menu">
+                menu
+            </span>
+        </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-surface-container-high shadow-lg px-6 py-5 space-y-3 z-50">
+        <a href="index.html" class="block text-base font-semibold text-primary bg-primary/10 px-4 py-2.5 rounded-xl">Inicio</a>
+        <a href="comoFunciona.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">¿Cómo funciona?</a>
+        <a href="beneficios.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Beneficios</a>
+        
+        <div class="pt-3 border-t border-surface-container-high">
+            <a href="inforepartidor.html" class="block text-base font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2.5 rounded-xl transition-colors">Sé un Repartidor</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Ocultar elementos inyectados por Google Translate */
+    iframe.goog-te-banner-frame,
+    .goog-te-banner-frame,
+    .skiptranslate,
+    .VIpgJd-Z3124e,
+    #goog-gt-tt {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+    /* Prevenir estilizado de resaltado de traducción */
+    font {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<script type="text/javascript">
+    (function() {
+        // Callback para inicialización de Google Translate
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        };
+
+        // Inyección dinámica de la API de Google Translate
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(gtScript);
+
+        // Limpiar el iframe de la barra superior de Google Translate
+        const observer = new MutationObserver(() => {
+            const iframe = document.querySelector('iframe.goog-te-banner-frame');
+            if (iframe) {
+                iframe.remove();
+            }
+            document.body.style.top = '0px';
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+
+        // Función global para cambiar el idioma de la vista
+        window.changeLanguage = function(langCode) {
+            if (langCode === 'es') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+                
+                var select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = 'es';
+                    select.dispatchEvent(new Event('change'));
+                }
+                
+                if (document.querySelector('font')) {
+                    window.location.reload();
+                    return;
+                }
+            } else {
+                var select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = langCode;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+
+            const selectedText = document.getElementById('selectedLangText');
+            const dropdown = document.getElementById('langDropdown');
+            const chevron = document.getElementById('langChevron');
+
+            if (selectedText) selectedText.textContent = langCode.toUpperCase();
+            if (dropdown) dropdown.classList.add('hidden');
+            if (chevron) chevron.classList.remove('rotate-180');
+        };
+
+        // Inicialización de event listeners cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtn = document.getElementById('langMenuBtn');
+            const langDropdown = document.getElementById('langDropdown');
+            const langChevron = document.getElementById('langChevron');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (langBtn && langDropdown && langChevron) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('hidden');
+                    langChevron.classList.toggle('rotate-180');
+                });
+            }
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuBtn.textContent = 'menu';
+                    } else {
+                        menuBtn.textContent = 'close';
+                    }
+                });
+            }
+
+            // Cerrar desplegables cuando se hace clic fuera de ellos
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && menuBtn && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.textContent = 'menu';
+                }
+                if (langDropdown && langBtn && langChevron && !langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                    langChevron.classList.remove('rotate-180');
+                }
+            });
+        });
+    })();
+</script>
+
+<main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-12 px-4 md:px-10 text-center overflow-hidden">
+        <!-- Decoración de fondo ambiental -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+            <span class="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Proceso Simple & Rápido
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+                Tu comida favorita en <span class="bg-gradient-to-r from-primary via-primary-container to-primary bg-clip-text text-transparent">3 simples pasos</span>
+            </h1>
+            <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto font-normal leading-relaxed">
+                Disfrutar de la mejor gastronomía local nunca fue tan fácil. Descubre, pide y relájate mientras nosotros nos encargamos del resto.
+            </p>
+        </div>
+    </section>
+
+<!-- Bento Grid Steps Section -->
+<section class="py-10 px-4 md:px-10 max-w-[1200px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Paso 1 -->
+        <div class="md:col-span-12 lg:col-span-5 bg-white rounded-3xl border border-black/5 shadow-xl shadow-black/[0.03] overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300">
+            <div class="p-8 pb-4 flex-grow space-y-5">
+                <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-md shadow-primary/20">1</span>
+                    <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Paso Inicial</span>
+                </div>
+                <h2 class="text-2xl font-bold text-on-surface tracking-tight">Descarga la App</h2>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Disponible para iOS y Android. Crea tu cuenta en segundos y empieza a explorar una selección  de restaurantes cerca de ti.
+                </p>
+                
+                <!-- Botones de Descarga Estilo Claro & Moderno -->
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <!-- App Store -->
+                    <a href="#" class="inline-flex items-center gap-3 bg-white hover:bg-primary/5 text-on-surface border border-black/10 hover:border-primary/40 px-5 py-2.5 rounded-2xl transition-all duration-200 hover:scale-[1.02] shadow-sm hover:shadow-md group/btn">
+                        <!-- Icono Apple SVG -->
+                        <svg class="w-6 h-6 fill-current text-on-surface shrink-0 group-hover/btn:scale-110 group-hover/btn:text-primary transition-all" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.12-1.96.99-3.1-.97.04-2.14.65-2.84 1.47-.61.71-1.15 1.87-1.01 2.98 1.09.08 2.19-.53 2.86-1.35z"/>
+                        </svg>
+                        <div class="flex flex-col text-left leading-tight">
+                            <span class="text-[10px] text-on-surface-variant font-semibold uppercase tracking-wider">Consíguelo en</span>
+                            <span class="text-sm font-bold text-on-surface group-hover/btn:text-primary transition-colors">App Store</span>
+                        </div>
+                    </a>
+
+                    <!-- Google Play -->
+                    <a href="#" class="inline-flex items-center gap-3 bg-white hover:bg-primary/5 text-on-surface border border-black/10 hover:border-primary/40 px-5 py-2.5 rounded-2xl transition-all duration-200 hover:scale-[1.02] shadow-sm hover:shadow-md group/btn">
+                        <!-- Icono Google Play SVG -->
+                        <svg class="w-5 h-5 fill-current text-on-surface shrink-0 group-hover/btn:scale-110 group-hover/btn:text-primary transition-all" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 20.5v-17c0-.55.33-.92.8-.92.2 0 .38.07.55.18l12.16 8.5c.4.28.5.83.22 1.23-.06.09-.14.17-.22.22L4.35 21.24c-.17.11-.35.18-.55.18-.47 0-.8-.37-.8-.92zm14.6-7.3l2.8-1.96c.55-.38.55-1.1 0-1.48l-2.8-1.96-2.5 2.7 2.5 2.7zm-3.9-2.7L4.8 3.8l7.6 8.2 1.3-1.5zm-1.3 1.5l-7.6 8.2 8.9-6.2-1.3-2z"/>
+                        </svg>
+                        <div class="flex flex-col text-left leading-tight">
+                            <span class="text-[10px] text-on-surface-variant font-semibold uppercase tracking-wider">Disponible en</span>
+                            <span class="text-sm font-bold text-on-surface group-hover/btn:text-primary transition-colors">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="h-60 mt-4 relative bg-gradient-to-b from-surface-container-low to-white rounded-b-3xl overflow-hidden px-6 pt-4">
+                <img alt="App interface" class="w-full h-full object-cover object-top rounded-t-2xl shadow-lg border border-black/5 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_m0znPSPKBXFH-lEZa4zqPjoZ35y4ayuNP35s_Wk3pI40f4WekoMDCZ4jpy6FrqOQqoL_s9SYRNOmdE5MGvRoIaiDGX4YrGYPqC6IlXnsiQ2_hbI8-tQoYdb8MbjorAjb7qZAhnlUe9U5sbRYzP7xmIIjIK1OPQefCJITqhYxVAFwe6uoPPVaJTrclxqMO7doRzZyvRDYDbHZRjTgyDrJtP3Mrtsn4-J86p856b_YIkdH_jdNLBdsRQ"/>
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="md:col-span-12 lg:col-span-7 bg-white rounded-3xl border border-black/5 shadow-xl shadow-black/[0.03] overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300">
+            <div class="h-64 relative overflow-hidden bg-surface-container-low">
+                <img alt="Delicious food selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3MNg3N66cGCGMCKBM6tTSQncK606ETNGKvlmxbDIcQZwphhQEKp94YdLpYebkTSddsMmBT3612YvMWIL7_BCDfJ2XLH14VInR4fOf1G1ZotXf6sPWAF-V7tgJwqPWrzfH_p_2ssDkXLuMZGcEeDx_5uSOSmXQUf22dFpXhskvobkKjAGXbScg162bqZqX9vniIWH3cJ4JW4NrkVY3CYyPMRVMkw7YPTeDtOdayc752UgPKpTe7Vc_uw"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                <span class="absolute bottom-4 left-6 text-white text-xs font-semibold bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                    Variedad Gastronómica
+                </span>
+            </div>
+            <div class="p-8 space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-md shadow-primary/20">2</span>
+                    <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Selección</span>
+                </div>
+                <h2 class="text-2xl font-bold text-on-surface tracking-tight">Elige tu restaurante favorito</h2>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Navega entre las mejores opciones locales de tu ciudad. Filtra por antojos, dietas especiales o tiempo estimado de entrega. Apoya la gastronomía de tu barrio con un solo toque.
+                </p>
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="md:col-span-12 bg-white rounded-3xl border border-black/5 shadow-xl shadow-black/[0.03] overflow-hidden flex flex-col md:flex-row group hover:-translate-y-1 transition-all duration-300">
+            <div class="p-8 md:p-10 md:w-1/2 flex flex-col justify-center space-y-5">
+                <div class="flex items-center justify-between">
+                    <span class="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-md shadow-primary/20">3</span>
+                    <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Entrega</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Recibe en tiempo récord</h2>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Comida caliente y fresca, directo a tu puerta. Sigue el recorrido de tu pedido en tiempo real a través del mapa interactivo y disfruta un servicio express garantizado.
+                </p>
+                <div class="pt-2">
+                    <div class="inline-flex items-center gap-2.5 bg-surface-container-low border border-black/5 px-4 py-2.5 rounded-2xl text-xs font-semibold text-on-surface">
+                        <span class="material-symbols-outlined text-primary text-xl notranslate" translate="no">timer</span>
+                        <span>Tiempo promedio: <strong class="text-primary">25-35 min</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-64 md:h-auto md:w-1/2 relative bg-surface-container-low overflow-hidden">
+                <img alt="Delivery arriving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9EX-2ABXOlEfPpnfsd0uKopSS5yqK7mKTUHUgbEengiNoCeWJLWJ1VssS7rnXUA8nQPzVmHkRJJrB4giSsOViMqVRbD_ta8m6jy1hLDVBLuSvLsDzqqYLqtLwxEbcBcoW8A3zw3Xug2WUoo8LWAgHdh6f7Q2jIlm4m-mRk4PvfHQy6MVItwWAdUAN425aeLJ-aCtwcSGhDLexZKNrICf1wcYHaA-bOSbbBY1_uyCXG_mVNrB2nm4rNA"/>
+                <!-- Overlay de tracking -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/40 shadow-lg flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined notranslate" translate="no">two_wheeler</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <p class="text-xs font-bold text-on-surface truncate">Pedido en camino</p>
+                        <p class="text-[11px] text-on-surface-variant truncate">Tu repartidor está cerca de tu ubicación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Banner CTA: Cierre Institucional & Manifiesto -->
+<section class="py-16 px-4 md:px-10">
+    <div class="max-w-[1200px] mx-auto bg-gradient-to-br from-primary/10 via-white to-primary/5 rounded-3xl border border-primary/20 p-8 md:p-14 text-center relative overflow-hidden shadow-xl shadow-black/[0.02]">
+        
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+            <!-- Insignia de Origen -->
+            <div class="inline-flex items-center gap-2 bg-white border border-primary/20 px-4 py-1.5 rounded-full shadow-sm">
+                <span class="text-base">🇺🇸</span>
+                <span class="text-xs font-bold text-primary uppercase tracking-wider">Nacidos en Maryland, EE. UU.</span>
+            </div>
+
+            <!-- Titular Directo -->
+            <h3 class="text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">
+                Una nueva forma de pedir <span class="text-primary">al precio correcto</span>
+            </h3>
+
+            <!-- Redacción Natural y Enfocada en Valor -->
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+                Eat for Less nació en Maryland para demostrar que pedir tu comida favorita a domicilio no tiene por qué costar de más. Conectamos a los mejores restaurantes locales contigo, garantizando un servicio transparente y tarifas justas para todos.
+            </p>
+        </div>
+    </div>
+</section>
+</main>
+<!-- Footer Extendido -->
+<footer class="bg-white border-t border-surface-container-high pt-10 pb-8 w-full">
+    <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+        
+        <!-- Grid Principal -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-10">
+            
+            <!-- Marca: Ocupa el ancho completo arriba en móvil -->
+            <div class="md:col-span-4 space-y-3 pb-6 md:pb-0 border-b md:border-none border-surface-container-high">
+                <a href="index.html" class="inline-flex items-center gap-2 notranslate" translate="no">
+                    <img alt="Eat For Less Logo" class="h-8 w-8 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
+                    <span class="font-bold text-primary text-xl lowercase tracking-tight">eat for less</span>
+                </a>
+                <p class="text-xs text-on-surface-variant leading-relaxed max-w-sm">
+                    La plataforma de entrega gastronómica diseñada para conectar clientes, restaurantes y repartidores locales de manera justa y eficiente.
+                </p>
+            </div>
+
+            <!-- Contenedor de Enlaces: Grid Móvil Simétrico (2 columnas parejas) -->
+            <div class="md:col-span-8 grid grid-cols-2 gap-x-6 gap-y-8">
+                
+                <!-- Columna 1: Navegación -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Navegación</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="index.html" class="hover:text-primary transition-colors block">Inicio</a></li>
+                        <li><a href="comofunciona.html" class="hover:text-primary transition-colors block">¿Cómo funciona?</a></li>
+                        <li><a href="beneficios.html" class="hover:text-primary transition-colors block">Beneficios</a></li>
+                        <li><a href="#features" class="hover:text-primary transition-colors block">Características</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Únete -->
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Únete</h4>
+                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
+                        <li><a href="inforepartidor.html" class="hover:text-primary transition-colors block">Sé un Repartidor</a></li>
+                        <li><a href="#restaurantes" class="hover:text-primary transition-colors block">Registra tu Restaurante</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 (Ocupa las 2 columnas en móvil para alinearse perfectamente y abarcar todo el ancho) -->
+                <div class="col-span-2 sm:col-span-1 pt-2 sm:pt-0 border-t sm:border-none border-surface-container-high">
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Legal & Soporte</h4>
+                    <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2 text-xs text-on-surface-variant">
+                        <li><a href="#" class="hover:text-primary transition-colors block">Términos y Cond.</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors block">Privacidad</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors block">Preguntas Frecuentes</a></li>
+                        <li><a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors block">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Barra Inferior -->
+        <div class="border-t border-surface-container-high pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <p class="text-xs text-on-surface-variant">© 2026 Eat For Less. Todos los derechos reservados.</p>
+            <div class="flex items-center gap-5 text-on-surface-variant">
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Compartir"><span class="material-symbols-outlined text-lg notranslate" translate="no">share</span></a>
+                <a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors p-1" aria-label="Correo"><span class="material-symbols-outlined text-lg notranslate" translate="no">mail</span></a>
+                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Llamar"><span class="material-symbols-outlined text-lg notranslate" translate="no">call</span></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
