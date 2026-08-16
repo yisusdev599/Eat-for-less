@@ -209,6 +209,39 @@
   });
 </script>
 
+<script>
+  // Resalta el enlace del header correspondiente a la página actual
+  (function () {
+    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    header.querySelectorAll('nav a[href], details a[href]').forEach((link) => {
+      const href = (link.getAttribute('href') || '').toLowerCase().split('#')[0].split('?')[0];
+      if (href.indexOf('.html') === -1) return;
+      const isDesktop = link.classList.contains('rounded-full');
+
+      if (href === current) {
+        if (isDesktop) {
+          link.classList.add('font-bold', 'text-primary', 'bg-primary/10');
+          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
+        } else {
+          link.classList.add('font-semibold', 'text-primary', 'bg-primary/10');
+          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
+        }
+      } else {
+        if (isDesktop) {
+          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
+          link.classList.remove('font-bold', 'text-primary', 'bg-primary/10');
+        } else {
+          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
+          link.classList.remove('font-semibold', 'text-primary', 'bg-primary/10');
+        }
+      }
+    });
+  })();
+</script>
+
 <main class="flex-grow">
     <!-- Hero Section -->
     <section class="relative pt-16 pb-12 px-4 md:px-10 text-center overflow-hidden">
