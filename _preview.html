@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #cfd6c2; }
+    iframe { position: fixed; top: 0; left: 0; display: block; border: 0; background: #fff; }
+  </style>
+</head>
+<body>
+  <iframe id="frame" src="about:blank"></iframe>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const width = Number(params.get("w") || 390);
+    const height = Number(params.get("h") || 900);
+    const startY = Number(params.get("scroll") || params.get("y") || 0);
+    const scale = Number(params.get("scale") || 1);
+    const page = params.get("page") || "index.html";
+    const frame = document.getElementById("frame");
+    frame.style.width = width + "px";
+    frame.style.height = height + "px";
+    frame.style.transform = "scale(" + scale + ")";
+    frame.style.transformOrigin = "top left";
+
+    function settle() {
+      try {
+        const doc = frame.contentDocument;
+        const win = frame.contentWindow;
+        doc.documentElement.style.scrollBehavior = "auto";
+        doc.body.style.scrollBehavior = "auto";
+        doc.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
+        win.scrollTo(0, startY);
+      } catch (error) { /* ignore */ }
+    }
+
+    frame.addEventListener("load", function () {
+      settle();
+      var ticks = 0;
+      var timer = setInterval(function () {
+        settle();
+        if (++ticks > 40) clearInterval(timer);
+      }, 100);
+    });
+
+    frame.src = page;
+  </script>
+</body>
+</html>

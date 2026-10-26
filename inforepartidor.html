@@ -1,595 +1,494 @@
-<!DOCTYPE html>
-<html class="light" lang="es">
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Eat For Less | Toda tu comida favorita</title>
-   <!-- Favicon (Icono de la pestaña) -->
-    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-              "primary-container": "#6cad80",
-              "on-secondary": "#ffffff",
-              "on-primary-container": "#003f20",
-              "inverse-on-surface": "#f0f1f1",
-              "surface-container-high": "#e8e8e8",
-              "surface-bright": "#f9f9f9",
-              "on-primary-fixed": "#00210e",
-              "on-error": "#ffffff",
-              "inverse-surface": "#2f3131",
-              "primary-fixed-dim": "#93d5a5",
-              "on-tertiary-fixed": "#191c1c",
-              "background": "#f9f9f9",
-              "surface-container-low": "#f3f3f4",
-              "tertiary-fixed": "#e1e3e2",
-              "primary": "#2a6a43",
-              "on-secondary-fixed": "#131e1a",
-              "on-tertiary": "#ffffff",
-              "tertiary": "#5c5f5e",
-              "secondary-container": "#d6e2dc",
-              "on-tertiary-container": "#343737",
-              "secondary-fixed": "#d9e5df",
-              "outline-variant": "#c0c9bf",
-              "on-surface-variant": "#404941",
-              "on-primary-fixed-variant": "#0a522d",
-              "outline": "#707971",
-              "tertiary-fixed-dim": "#c4c7c6",
-              "surface-container-highest": "#e2e2e2",
-              "secondary": "#55615c",
-              "primary-fixed": "#aef2c0",
-              "on-background": "#1a1c1c",
-              "surface-container": "#eeeeee",
-              "secondary-fixed-dim": "#bdc9c3",
-              "on-secondary-fixed-variant": "#3e4945",
-              "on-primary": "#ffffff",
-              "surface-tint": "#2a6a43",
-              "surface-dim": "#dadada",
-              "surface-container-lowest": "#ffffff",
-              "on-surface": "#1a1c1c",
-              "inverse-primary": "#93d5a5",
-              "on-error-container": "#93000a",
-              "on-tertiary-fixed-variant": "#444747",
-              "surface-variant": "#e2e2e2",
-              "surface": "#f9f9f9",
-              "error": "#ba1a1a",
-              "tertiary-container": "#9da09f",
-              "error-container": "#ffdad6",
-              "on-secondary-container": "#5a6560"
-            },
-            "spacing": {
-              "unit": "8px",
-              "stack-md": "16px",
-              "stack-lg": "32px",
-              "gutter": "24px",
-              "section-gap": "80px",
-              "stack-sm": "8px",
-              "margin-mobile": "16px",
-              "margin-desktop": "40px",
-              "container-max": "1200px"
-            },
-            "fontFamily": {
-              "sans": ["Poppins", "sans-serif"],
-              "headline-xl": ["Poppins", "sans-serif"],
-              "body-sm": ["Poppins", "sans-serif"],
-              "headline-md": ["Poppins", "sans-serif"],
-              "label-sm": ["Poppins", "sans-serif"],
-              "body-lg": ["Poppins", "sans-serif"],
-              "headline-lg": ["Poppins", "sans-serif"],
-              "label-md": ["Poppins", "sans-serif"],
-              "body-md": ["Poppins", "sans-serif"]
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif !important;
-        }
-        body {
-            font-family: 'Poppins', sans-serif !important;
-            background-color: #f9f9f9;
-            color: #1a1c1c;
-            overflow-x: hidden;
-            top: 0px !important;
-            position: static !important;
-        }
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined' !important;
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .shadow-level-1 { box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05); }
-        .shadow-level-2 { box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08); }
-        .shadow-level-3 { box-shadow: 0 20px 48px rgba(47, 58, 54, 0.12); }
-        
-        /* Animaciones */
-        .floating-anim {
-            animation: floating 3.5s ease-in-out infinite;
-        }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sé repartidor | Eat For Less</title>
+  <meta name="description" content="Conduce cuando quieras y gana lo que necesites. Únete a la red de repartidores de Eat For Less.">
+  <meta name="theme-color" content="#A4C516">
+  <meta property="og:title" content="Sé repartidor | Eat For Less">
+  <meta property="og:description" content="Tu ruta. Tus reglas. Tu propio horario.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
-        /* Reglas CSS para Google Translate */
-        iframe.goog-te-banner-frame,
-        .goog-te-banner-frame,
-        .skiptranslate,
-        .VIpgJd-Z3124e,
-        #goog-gt-tt {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-        }
-        font {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
-    </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Poppins:wght@700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="antialiased">
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<!-- TopAppBar -->
-<header class="w-full bg-white/95 backdrop-blur-md border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300 shadow-sm relative overflow-x-clip">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-3 sm:px-6 py-2.5">
-        
-        <!-- Bloque Izquierdo: Logo y Marca -->
-        <a href="index.html" class="flex items-center gap-2 shrink-0 group">
-            <div class="relative overflow-hidden rounded-lg border border-black/5 p-0.5 group-hover:scale-105 transition-transform duration-200">
-                <img alt="Eat For Less Logo" class="h-8 w-8 md:h-9 md:w-9 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-            </div>
-            <span class="text-lg md:text-xl font-black text-primary tracking-tight lowercase whitespace-nowrap group-hover:text-primary/90 transition-colors">
-                eat for less
-            </span>
-        </a>
-
-        <!-- Bloque Central: Navegación Principal (Escritorio) -->
-        <nav class="hidden md:flex items-center gap-1">
-            <a href="index.html" class="text-sm font-bold text-primary bg-primary/10 px-4 py-2 rounded-full whitespace-nowrap transition-all duration-200 hover:scale-105">
-                <span>Inicio</span>
-            </a>
-            <a href="comoFunciona.html" class="text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105">
-                <span>¿Cómo funciona?</span>
-            </a>
-            <a href="Beneficios.html" class="text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105">
-                <span>Beneficios</span>
-            </a>
-        </nav>
-
-        <!-- Bloque Derecho: Acciones -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <!-- Botón Descargar (Escritorio / Tablet) -->
-            <a href="#descargar" class="hidden sm:flex bg-primary hover:bg-primary/90 text-white text-xs md:text-sm font-semibold px-3.5 md:px-4 py-1.5 md:py-2 rounded-full transition-all duration-200 hover:scale-105 items-center gap-1 whitespace-nowrap shrink-0 shadow-sm">
-                <span>Descargar</span>
-                <span class="material-symbols-outlined text-base notranslate" translate="no">download</span>
-            </a>
-
-            <!-- Botón Hamburguesa Móvil -->
-            <details class="md:hidden relative group">
-                <summary class="text-primary hover:bg-black/5 p-1.5 rounded-full transition-transform duration-200 active:scale-95 flex items-center justify-center shrink-0 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-                    <span class="material-symbols-outlined text-2xl select-none notranslate" translate="no">menu</span>
-                </summary>
-                
-                <!-- Menú Desplegable Móvil -->
-                <div class="fixed top-[58px] left-0 w-full bg-white border-b border-surface-container-high shadow-lg px-5 py-3.5 space-y-2 z-50">
-                    <a href="index.html" class="block text-sm font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg">
-                        <span>Inicio</span>
-                    </a>
-                    <a href="comoFunciona.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                        <span>¿Cómo funciona?</span>
-                    </a>
-                    <a href="Beneficios.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                        <span>Beneficios</span>
-                    </a>
-                    
-                    <div class="pt-2 border-t border-surface-container-high flex flex-col gap-2">
-                        <a href="inforepartidor.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                            <span>Sé un Repartidor</span>
-                        </a>
-                        
-                        <!-- Botón Descargar App (Ajustado para Móvil) -->
-                        <a href="#descargar" class="sm:hidden flex items-center justify-center gap-1 bg-primary text-white text-xs font-semibold px-3 py-2 rounded-lg text-center shadow-sm w-full transition-transform active:scale-95">
-                            <span>Descargar App</span>
-                            <span class="material-symbols-outlined text-sm notranslate" translate="no">download</span>
-                        </a>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </div>
-</header>
-
-<script>
-  // Cerrar menú al hacer clic fuera
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('details')) {
-      document.querySelectorAll('details').forEach(d => d.removeAttribute('open'));
-    }
-  });
-</script>
-
-<script>
-  // Resalta el enlace del header correspondiente a la página actual
-  (function () {
-    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const header = document.querySelector('header');
-    if (!header) return;
-
-    header.querySelectorAll('nav a[href], details a[href]').forEach((link) => {
-      const href = (link.getAttribute('href') || '').toLowerCase().split('#')[0].split('?')[0];
-      if (href.indexOf('.html') === -1) return;
-      const isDesktop = link.classList.contains('rounded-full');
-
-      if (href === current) {
-        if (isDesktop) {
-          link.classList.add('font-bold', 'text-primary', 'bg-primary/10');
-          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
-        } else {
-          link.classList.add('font-semibold', 'text-primary', 'bg-primary/10');
-          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
-        }
-      } else {
-        if (isDesktop) {
-          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
-          link.classList.remove('font-bold', 'text-primary', 'bg-primary/10');
-        } else {
-          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
-          link.classList.remove('font-semibold', 'text-primary', 'bg-primary/10');
-        }
-      }
-    });
-  })();
-</script>
-
-<main class="overflow-x-hidden">
-
-<!-- HERO Y CARD DE ACCESO OPTIMIZADA (FORMA PANORÁMICA Y ESPACIOSA) -->
-<section class="max-w-[1200px] mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] transition-all duration-700 ease-out opacity-100 translate-y-0">
-    
-    <!-- Encabezado del Hero Centrado -->
-  <!-- Reemplaza el bloque del encabezado del Hero por este -->
-<div class="text-center max-w-3xl mb-12 animate-fade-in">
-    <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full mb-5 text-xs font-semibold tracking-wide uppercase">
-        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-        Red de Repartidores
-    </div>
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-background leading-none">
-        Tu coche, tu moto, <span class="bg-gradient-to-r from-primary to-[#499966] bg-clip-text text-transparent">tu propio horario</span>
-    </h1>
-    <p class="text-base text-secondary mt-3 max-w-lg mx-auto font-normal">
-        Únete a la comunidad que te da el control total de tus ingresos y tu tiempo.
-    </p>
-</div>
-    
-   
-
-<!-- Section 2: Beneficios Clave -->
-<section class="bg-surface-container-low py-section-gap transition-all duration-700 ease-out opacity-100 translate-y-0">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg mb-4">¿Por qué elegir Eat For Less?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Diseñado para que tu esfuerzo rinda al máximo.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Column 1 -->
-<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
-    <div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
-        <span class="material-symbols-outlined text-4xl text-primary notranslate" translate="no">
-            two_wheeler
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="Eat For Less" width="42" height="42">
         </span>
+        <span class="brand-name">eat<span>for</span>less</span>
+      </a>
+
+      <nav class="nav-pill" aria-label="Navegación principal">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="comoFunciona.html">Cómo funciona</a>
+        <a class="nav-link" href="Beneficios.html">Beneficios</a>
+        <a class="nav-link is-active" href="inforepartidor.html" aria-current="page">Repartidores</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-lime btn-sm header-cta" href="mailto:soporte@eatforless.com?subject=Quiero%20unirme%20como%20repartidor">
+          <span class="btn-label">Unirme</span>
+          <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span>
+        </a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="material-symbols-outlined" aria-hidden="true" translate="no">menu</span>
+        </button>
+      </div>
     </div>
-    <h3 class="font-headline-md text-headline-md mb-4">Horarios Flexibles</h3>
-    <p class="font-body-sm text-body-sm text-secondary">Tú decides cuándo y cuánto tiempo trabajar. No hay turnos mínimos ni jefes que te vigilen.</p>
-</div>
-<!-- Column 2 -->
-<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
-<div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
-<span class="material-symbols-outlined text-primary text-4xl">payments</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4">Pagos Rápidos</h3>
-<p class="font-body-sm text-body-sm text-secondary">Recibe tus ganancias semanalmente sin complicaciones directamente en tu cuenta bancaria.</p>
-</div>
-<!-- Column 3 -->
-<div class="bg-white p-10 rounded-2xl shadow-level-1 hover:shadow-level-2 transition-soft text-center group">
-<div class="w-20 h-20 bg-secondary-container rounded-2xl flex items-center justify-center mx-auto mb-8 transition-soft group-hover:scale-110">
-<span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4">Soporte 24/7</h3>
-<p class="font-body-sm text-body-sm text-secondary">Equipo dedicado para ayudarte en cada entrega. Nunca estarás solo en la carretera.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 3: Cómo funciona -->
-<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 ease-out opacity-100 translate-y-0">
-  <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
-    <div class="w-full md:w-1/3">
-      <h2 class="font-headline-lg text-headline-lg mb-6">Empieza a ganar en tres pasos</h2>
-      <p class="font-body-md text-body-md text-secondary mb-8">Nuestra plataforma está diseñada para que puedas salir a la calle lo antes posible.</p>
-      <button class="text-primary font-label-md flex items-center gap-2 group">
-        Ver tutorial detallado
-        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+  </header>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Menú móvil">
+    <div class="drawer-head">
+      <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="" width="42" height="42">
+        </span>
+        <span class="brand-name">eat<span>for</span>less</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Cerrar menú">
+        <span class="material-symbols-outlined" aria-hidden="true" translate="no">close</span>
       </button>
     </div>
-    
-    <div class="w-full md:w-2/3 grid grid-cols-1 gap-6 md:gap-8 relative">
-      <div class="hidden md:block absolute left-8 top-12 bottom-12 w-0.5 bg-primary-container opacity-20"></div>
-      
-      <div class="flex gap-4 sm:gap-8 items-start relative bg-white p-6 sm:p-8 rounded-2xl shadow-level-1">
-        <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10 text-lg sm:text-2xl">1</div>
-        <div>
-          <h4 class="font-headline-md text-headline-md mb-2">Regístrate</h4>
-          <p class="font-body-sm text-body-sm text-secondary">Crea tu perfil en menos de 5 minutos a través de nuestra aplicación o sitio web.</p>
-        </div>
-      </div>
 
-      <div class="flex gap-4 sm:gap-8 items-start relative bg-white p-6 sm:p-8 rounded-2xl shadow-level-1">
-        <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10 text-lg sm:text-2xl">2</div>
-        <div>
-          <h4 class="font-headline-md text-headline-md mb-2">Identificación y Elegibilidad</h4>
-          <p class="font-body-sm text-body-sm text-secondary">Proporciona tu licencia de conducir o identificación oficial (ID). También requerimos tu número de seguro social para realizar una verificación de antecedentes y confirmar tu elegibilidad.</p>
-        </div>
-      </div>
+    <nav class="drawer-nav" aria-label="Secciones">
+      <a class="drawer-link" href="index.html">Inicio <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="comoFunciona.html">Cómo funciona <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="Beneficios.html">Beneficios <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="inforepartidor.html" aria-current="page">Sé repartidor <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+    </nav>
 
-      <div class="flex gap-4 sm:gap-8 items-start relative bg-white p-6 sm:p-8 rounded-2xl shadow-level-1">
-        <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md relative z-10 text-lg sm:text-2xl">3</div>
-        <div>
-          <h4 class="font-headline-md text-headline-md mb-2">Empieza a ganar</h4>
-          <p class="font-body-sm text-body-sm text-secondary">Una vez aprobado, enciende la app, acepta pedidos y genera ingresos.</p>
-        </div>
+    <div class="drawer-foot">
+      <div class="drawer-note">
+        <span class="material-symbols-outlined" aria-hidden="true" translate="no">rocket_launch</span>
+        <span>Registro 100% en línea. Empieza cuando tú decidas.</span>
       </div>
+      <a class="btn btn-lime btn-block" href="mailto:soporte@eatforless.com?subject=Quiero%20unirme%20como%20repartidor">Quiero unirme</a>
+      <a class="btn btn-outline btn-block" href="index.html#descargar">Descargar app</a>
     </div>
-  </div>
-</section>
+  </aside>
 
-<!-- Section 4: Requisitos -->
-<section class="py-section-gap bg-surface transition-all duration-700 ease-out opacity-100 translate-y-0">
-  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-    <div class="bg-white rounded-2xl p-6 sm:p-10 md:p-16 shadow-level-1 border border-outline-variant/30 flex flex-col md:flex-row gap-8 md:gap-12">
-      
-      <!-- Lado Izquierdo: Requisitos -->
-      <div class="w-full md:w-1/2">
-        <h2 class="font-headline-lg text-headline-lg mb-4 sm:mb-6">Lo que necesitas para empezar</h2>
-        <p class="font-body-md text-body-md text-secondary mb-6 sm:mb-8">Asegúrate de cumplir con estos requisitos básicos antes de comenzar tu registro.</p>
-        
-        <div class="space-y-3 sm:space-y-4">
-          <div class="flex items-start sm:items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 sm:mt-0">directions_car</span>
-            <span class="font-body-md text-body-md leading-tight">Vehículo propio (Coche, Moto o Bicicleta)</span>
-          </div>
-          <div class="flex items-start sm:items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 sm:mt-0">smartphone</span>
-            <span class="font-body-md text-body-md leading-tight">Smartphone con datos (iOS o Android)</span>
-          </div>
-          <div class="flex items-start sm:items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 sm:mt-0">person</span>
-            <span class="font-body-md text-body-md leading-tight">Mayor de edad (18+ años)</span>
-          </div>
-          <div class="flex items-start sm:items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 sm:mt-0">badge</span>
-            <span class="font-body-md text-body-md leading-tight">Identificación oficial (o Licencia de conducir si vas a repartir en coche o moto)</span>
-          </div>
-          <div class="flex items-start sm:items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary shrink-0 mt-0.5 sm:mt-0">verified_user</span>
-            <span class="font-body-md text-body-md leading-tight">Número de Seguro Social (únicamente para verificación de antecedentes y elegibilidad)</span>
-          </div>
-        </div>
-      </div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="glow glow-lime" style="width: 620px; height: 620px; top: -260px; right: -140px;"></div>
+      <div class="container relative">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="hero-copy">
+            <span class="launch-pill">
+              <span class="live-dot" aria-hidden="true"></span>
+              Red de repartidores
+            </span>
+            <h1 class="mt-6 text-[clamp(2.65rem,6.2vw,4.6rem)] leading-[0.98]">
+              Tu ruta. Tus reglas.<br><span class="highlight">Tu propio horario.</span>
+            </h1>
+            <p class="mt-6 text-[1.02rem] md:text-lg text-muted max-w-[34rem] leading-relaxed">
+              Únete a la comunidad que te da el control total de tus ingresos y tu tiempo. Sin jefes, sin turnos obligatorios y con el respaldo de un equipo real.
+            </p>
 
-      <!-- Lado Derecho: Tarjetas Informativas -->
-      <div class="w-full md:w-1/2 flex items-center justify-center">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-          <div class="w-full min-h-[120px] sm:min-h-[140px] bg-primary-container/20 rounded-2xl p-5 flex flex-col justify-between">
-            <span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
-            <span class="font-label-sm text-label-sm font-semibold mt-2">Actitud positiva</span>
-          </div>
-          <div class="w-full min-h-[120px] sm:min-h-[140px] bg-surface-container-high rounded-2xl p-5 flex flex-col justify-between">
-            <span class="material-symbols-outlined text-primary text-3xl">timer</span>
-            <span class="font-label-sm text-label-sm font-semibold mt-2">Puntualidad</span>
-          </div>
-          <div class="w-full sm:col-span-2 min-h-[120px] sm:min-h-[140px] bg-surface-variant rounded-2xl p-5 flex flex-col justify-between">
-            <span class="material-symbols-outlined text-primary text-3xl">health_and_safety</span>
-            <span class="font-label-sm text-label-sm font-semibold mt-2">Conducción segura</span>
-          </div>
-        </div>
-      </div>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-lime btn-lg" href="mailto:soporte@eatforless.com?subject=Quiero%20unirme%20como%20repartidor">
+                Quiero unirme
+                <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_forward</span>
+              </a>
+              <a class="btn btn-outline btn-lg" href="#requisitos">Ver requisitos</a>
+            </div>
 
-    </div>
-  </div>
-</section>
+            <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.82rem] font-semibold text-ink-soft">
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">schedule</span>
+                Horarios flexibles
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">account_balance_wallet</span>
+                Pagos semanales
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">support_agent</span>
+                Soporte humano
+              </span>
+            </div>
+          </div>
 
-<!-- Section 5: Mensaje Emotivo Pre-Footer -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mb-20 transition-all duration-700 ease-out opacity-100 translate-y-0">
-    <div class="bg-[#248860] text-white rounded-3xl p-8 md:p-12 border border-white/10 shadow-level-1 hover:shadow-level-2 transition-all duration-300">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
-            
-            <!-- Contenido de Texto -->
-            <div class="flex-1 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-label-md mb-6 border border-white/20">
-                    <span class="material-symbols-outlined text-base notranslate" translate="no">favorite</span>
-                    <span>Hecho con pasión</span>
+          <div class="hero-media relative mx-auto w-full max-w-[540px]">
+            <div class="media-frame media-zoom aspect-[4/3] sm:aspect-[5/4]">
+              <video autoplay muted loop playsinline preload="metadata" data-autoplay poster="https://images.unsplash.com/photo-1526367790999-0150786686a2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" aria-label="Repartidor de Eat For Less en ruta">
+                <source src="repartidor1.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+              </video>
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+
+              <div class="absolute left-4 right-4 bottom-4 glass-card rounded-2xl p-4 flex items-center gap-3">
+                <span class="w-11 h-11 rounded-xl bg-brand text-ink grid place-items-center shrink-0">
+                  <span class="material-symbols-outlined text-[22px]" aria-hidden="true" translate="no">account_balance_wallet</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-[0.8rem] font-bold text-ink">Tus ganancias, a tu ritmo</p>
+                  <p class="text-[0.68rem] text-muted">Pagos directos cada semana</p>
                 </div>
-                
-                <h3 class="font-headline-lg text-headline-lg text-white mb-4 leading-tight">
-                    Somos un proyecto que empieza pequeño, pero con la visión clara de crecer junto a ti.
-                </h3>
-                
-                <p class="font-body-md text-body-md text-white/90 max-w-xl">
-                    Cada entrega cuenta una historia de esfuerzo local, comunidad y ganas de salir adelante juntos.
-                </p>
+                <span class="text-[0.66rem] font-bold text-brand-deep shrink-0">Sin jefes</span>
+              </div>
             </div>
 
-            <!-- Logo perfectamente camuflado -->
-            <div class="flex-shrink-0 relative group">
-                <img 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv" 
-                    alt="Eat For Less Logo" 
-                    class="w-40 h-40 md:w-48 md:h-48 object-contain rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                />
+            <div class="glass-card rounded-2xl px-4 py-3 absolute -right-2 sm:-right-5 top-8 hidden sm:flex items-center gap-3 animate-float">
+              <span class="w-9 h-9 rounded-full bg-brand text-ink grid place-items-center shrink-0">
+                <span class="material-symbols-outlined text-[19px]" aria-hidden="true" translate="no">check</span>
+              </span>
+              <div>
+                <p class="text-[0.72rem] font-bold text-ink leading-tight">Registro en línea</p>
+                <p class="text-[0.64rem] text-muted">Sin papeleo eterno</p>
+              </div>
             </div>
-
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- STAT STRIP -->
+    <section class="container -mt-1 sm:-mt-4 relative z-10">
+      <div class="stat-strip max-w-3xl mx-auto">
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Flexible</span>
+        </div>
+        <div class="stat">
+          <strong>Semanal</strong>
+          <span>Pagos</span>
+        </div>
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Soporte</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section">
+      <div class="container">
+        <div class="max-w-2xl reveal">
+          <span class="launch-pill">Por qué unirte</span>
+          <h2 class="mt-5 text-[clamp(2rem,4.2vw,3.3rem)]">Diseñado para que tu esfuerzo rinda.</h2>
+          <p class="mt-4 text-muted text-[1.02rem] leading-relaxed">Menos fricción, más claridad. Esto es lo que puedes esperar cuando conduces con Eat For Less.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <article class="card card-hover p-7 md:p-8 text-center reveal">
+            <div class="icon-badge mx-auto">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">two_wheeler</span>
+            </div>
+            <h3 class="mt-6 text-xl">Horarios flexibles</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Tú decides cuándo y cuánto tiempo trabajar. No hay turnos mínimos ni jefes que te vigilen.</p>
+          </article>
+
+          <article class="card card-hover p-7 md:p-8 text-center reveal" style="--delay: 90ms">
+            <div class="icon-badge mx-auto">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">payments</span>
+            </div>
+            <h3 class="mt-6 text-xl">Pagos rápidos</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Recibe tus ganancias semanalmente, sin complicaciones y directamente en tu cuenta bancaria.</p>
+          </article>
+
+          <article class="card card-hover p-7 md:p-8 text-center reveal" style="--delay: 180ms">
+            <div class="icon-badge mx-auto">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">support_agent</span>
+            </div>
+            <h3 class="mt-6 text-xl">Soporte 24/7</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Un equipo dedicado para ayudarte en cada entrega. Nunca estarás solo en la carretera.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="section-tight bg-white border-y border-line" id="pasos">
+      <div class="container">
+        <div class="max-w-2xl reveal">
+          <span class="launch-pill">Empieza hoy</span>
+          <h2 class="mt-5 text-[clamp(2rem,4vw,3rem)]">Empieza a ganar en tres pasos.</h2>
+          <p class="mt-4 text-muted">Nuestra plataforma está diseñada para que puedas salir a la calle lo antes posible.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <article class="card p-7 relative reveal">
+            <div class="step-line hidden md:block" aria-hidden="true"></div>
+            <div class="flex items-center justify-between">
+              <span class="step-number">1</span>
+              <span class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">Registro</span>
+            </div>
+            <h3 class="mt-6 text-xl">Regístrate</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Crea tu perfil en menos de 5 minutos desde tu teléfono. Solo necesitas tus datos básicos.</p>
+          </article>
+
+          <article class="card p-7 relative reveal" style="--delay: 90ms">
+            <div class="step-line hidden md:block" aria-hidden="true"></div>
+            <div class="flex items-center justify-between">
+              <span class="step-number">2</span>
+              <span class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">Verificación</span>
+            </div>
+            <h3 class="mt-6 text-xl">Verifica tu identidad</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Sube tu identificación oficial y, si aplica, tu licencia de conducir. También verificamos elegibilidad.</p>
+          </article>
+
+          <article class="card p-7 reveal" style="--delay: 180ms">
+            <div class="flex items-center justify-between">
+              <span class="step-number">3</span>
+              <span class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">A ganar</span>
+            </div>
+            <h3 class="mt-6 text-xl">Empieza a ganar</h3>
+            <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Cuando estés aprobado, activa la app, acepta pedidos y genera ingresos a tu ritmo.</p>
+          </article>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4 reveal">
+          <a class="btn btn-lime btn-lg" href="mailto:soporte@eatforless.com?subject=Quiero%20unirme%20como%20repartidor">
+            Comenzar registro
+            <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_forward</span>
+          </a>
+          <span class="text-[0.75rem] font-semibold text-muted inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">lock</span>
+            Tus datos se tratan de forma confidencial
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section class="section" id="requisitos">
+      <div class="container">
+        <div class="card p-6 sm:p-9 md:p-12 grid md:grid-cols-2 gap-10 reveal">
+          <div>
+            <span class="launch-pill">Antes de empezar</span>
+            <h2 class="mt-4 text-[clamp(1.8rem,3.4vw,2.7rem)]">Lo que necesitas para arrancar.</h2>
+            <p class="mt-3 text-[0.92rem] text-muted leading-relaxed">Asegúrate de cumplir con estos requisitos básicos antes de comenzar tu registro.</p>
+
+            <div class="mt-7 space-y-3">
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-2 border border-line">
+                <span class="material-symbols-outlined text-brand-deep shrink-0" aria-hidden="true" translate="no">directions_car</span>
+                <span class="text-[0.88rem] leading-snug">Vehículo propio: coche, moto o bicicleta.</span>
+              </div>
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-2 border border-line">
+                <span class="material-symbols-outlined text-brand-deep shrink-0" aria-hidden="true" translate="no">smartphone</span>
+                <span class="text-[0.88rem] leading-snug">Smartphone con datos (iOS o Android).</span>
+              </div>
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-2 border border-line">
+                <span class="material-symbols-outlined text-brand-deep shrink-0" aria-hidden="true" translate="no">person</span>
+                <span class="text-[0.88rem] leading-snug">Ser mayor de edad (18+ años).</span>
+              </div>
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-2 border border-line">
+                <span class="material-symbols-outlined text-brand-deep shrink-0" aria-hidden="true" translate="no">badge</span>
+                <span class="text-[0.88rem] leading-snug">Identificación oficial y licencia de conducir si repartes en coche o moto.</span>
+              </div>
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-2 border border-line">
+                <span class="material-symbols-outlined text-brand-deep shrink-0" aria-hidden="true" translate="no">verified_user</span>
+                <span class="text-[0.88rem] leading-snug">Número de Seguro Social, únicamente para verificación de antecedentes y elegibilidad.</span>
+              </div>
+            </div>
+
+            <p class="mt-4 flex items-start gap-2 text-[0.72rem] text-muted leading-relaxed">
+              <span class="material-symbols-outlined text-[16px] text-brand-deep shrink-0 mt-0.5" aria-hidden="true" translate="no">lock</span>
+              Tu información se usa solo para el proceso de verificación. No la compartimos con terceros ajenos al mismo.
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">Además, buscamos personas con</p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="rounded-2xl bg-brand-soft border border-brand/30 p-5 min-h-[130px] flex flex-col justify-between">
+                <span class="material-symbols-outlined text-brand-deep text-[30px]" aria-hidden="true" translate="no">sentiment_satisfied</span>
+                <span class="text-[0.82rem] font-bold">Actitud positiva</span>
+              </div>
+              <div class="rounded-2xl bg-surface-3 border border-line p-5 min-h-[130px] flex flex-col justify-between">
+                <span class="material-symbols-outlined text-brand-deep text-[30px]" aria-hidden="true" translate="no">timer</span>
+                <span class="text-[0.82rem] font-bold">Puntualidad</span>
+              </div>
+              <div class="sm:col-span-2 rounded-2xl bg-ink text-white p-5 min-h-[120px] flex items-center justify-between gap-4">
+                <div>
+                  <span class="material-symbols-outlined text-brand text-[30px]" aria-hidden="true" translate="no">health_and_safety</span>
+                  <p class="mt-2 text-[0.82rem] font-bold text-white">Conducción segura</p>
+                  <p class="text-[0.7rem] text-white/50">La prioridad siempre es llegar bien.</p>
+                </div>
+                <span class="w-12 h-12 rounded-full bg-brand text-ink grid place-items-center shrink-0">
+                  <span class="material-symbols-outlined" aria-hidden="true" translate="no">check</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-white border-y border-line">
+      <div class="container max-w-3xl">
+        <div class="text-center reveal">
+          <span class="launch-pill">Dudas de repartidores</span>
+          <h2 class="mt-5 text-[clamp(1.9rem,4vw,2.8rem)]">Antes de salir a la calle.</h2>
+          <p class="mt-3 text-muted">Lo que más nos preguntan quienes quieren unirse.</p>
+        </div>
+
+        <div class="accordion mt-9 reveal" data-accordion-group>
+          <div class="accordion-item is-open" data-accordion>
+            <button class="accordion-trigger" type="button" aria-expanded="true" aria-controls="driver-faq-1">
+              ¿Cuánto puedo ganar repartiendo?
+              <span class="accordion-icon" aria-hidden="true"><span class="material-symbols-outlined" translate="no">add</span></span>
+            </button>
+            <div class="accordion-panel" id="driver-faq-1">
+              <div>
+                <p class="accordion-content">Tus ingresos dependen de las horas que trabajes, la zona y la demanda del momento. No prometemos cifras fijas: trabajamos con tarifas claras para que sepas cómo se calcula cada pedido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion>
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="driver-faq-2">
+              ¿Necesito vehículo propio?
+              <span class="accordion-icon" aria-hidden="true"><span class="material-symbols-outlined" translate="no">add</span></span>
+            </button>
+            <div class="accordion-panel" id="driver-faq-2" hidden>
+              <div>
+                <p class="accordion-content">Sí. Puedes repartir en coche, moto o bicicleta. Solo necesitas un medio de transporte propio y la documentación que corresponda al vehículo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-accordion>
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="driver-faq-3">
+              ¿Cómo funcionan los pagos?
+              <span class="accordion-icon" aria-hidden="true"><span class="material-symbols-outlined" translate="no">add</span></span>
+            </button>
+            <div class="accordion-panel" id="driver-faq-3" hidden>
+              <div>
+                <p class="accordion-content">Los pagos se procesan semanalmente y se depositan en la cuenta bancaria que registres. Antes de empezar, te explicamos el detalle de tarifas y propinas para que no haya sorpresas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMOTIONAL CTA -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-dark rounded-[36px] p-7 sm:p-10 md:p-14 reveal">
+          <div class="glow glow-lime" style="width: 500px; height: 500px; top: -260px; right: -100px;"></div>
+          <div class="relative grid md:grid-cols-[1fr_auto] gap-10 items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand">
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true" translate="no">favorite</span>
+                Hecho con pasión
+              </span>
+              <h2 class="mt-5 text-[clamp(1.9rem,4vw,3.1rem)] max-w-2xl">Empieza pequeño. Crece junto a nosotros.</h2>
+              <p class="mt-4 max-w-xl text-[0.95rem] md:text-base leading-relaxed text-white/65">
+                Somos un proyecto que está dando sus primeros pasos, con la visión clara de crecer contigo. Cada entrega cuenta una historia de esfuerzo local, comunidad y ganas de salir adelante.
+              </p>
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a class="btn btn-lime btn-lg" href="mailto:soporte@eatforless.com?subject=Quiero%20unirme%20como%20repartidor">
+                  Quiero unirme
+                  <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_forward</span>
+                </a>
+                <a class="btn btn-outline btn-lg" href="Beneficios.html">Ver beneficios</a>
+              </div>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <div class="w-36 h-36 lg:w-44 lg:h-44 rounded-3xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+                <img src="assets/logo.jpg" alt="Logo de Eat For Less" class="w-full h-full object-cover rounded-2xl" width="176" height="176" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
+        <div class="md:col-span-5 footer-brand">
+          <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+            <span class="brand-mark">
+              <img src="assets/logo.jpg" alt="" width="42" height="42">
+            </span>
+            <span class="brand-name">eat<span>for</span>less</span>
+          </a>
+          <p class="mt-4 max-w-sm text-[0.85rem] leading-relaxed text-white/55">
+            La plataforma de entrega gastronómica que conecta clientes, restaurantes y repartidores locales de forma justa y eficiente.
+          </p>
+          <div class="mt-6 flex items-center gap-2.5">
+            <button class="footer-social" type="button" data-share aria-label="Compartir Eat For Less">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true" translate="no">share</span>
+            </button>
+            <a class="footer-social" href="mailto:soporte@eatforless.com" aria-label="Escribir a Eat For Less">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true" translate="no">mail</span>
+            </a>
+          </div>
+          <span class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[0.68rem] font-semibold text-white/60">
+            <span class="live-dot" aria-hidden="true"></span>
+            Próximo lanzamiento
+          </span>
+        </div>
+
+        <div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div>
+            <h2 class="footer-title">Navegación</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="index.html">Inicio</a></li>
+              <li><a class="footer-link" href="comoFunciona.html">Cómo funciona</a></li>
+              <li><a class="footer-link" href="Beneficios.html">Beneficios</a></li>
+              <li><a class="footer-link" href="marca.html">Nuestra marca</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-title">Únete</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="inforepartidor.html">Sé repartidor</a></li>
+              <li><a class="footer-link" href="index.html#restaurantes">Restaurante aliado</a></li>
+              <li><a class="footer-link" href="mailto:soporte@eatforless.com?subject=Quiero%20ser%20de%20los%20primeros">Lista de lanzamiento</a></li>
+            </ul>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <h2 class="footer-title">Soporte</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="index.html#faq">Preguntas frecuentes</a></li>
+              <li><a class="footer-link" href="mailto:soporte@eatforless.com">Contacto</a></li>
+              <li><a class="footer-link" href="legal.html#terminos">Términos y condiciones</a></li>
+              <li><a class="footer-link" href="legal.html#privacidad">Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <p class="text-[0.72rem] text-white/40">© <span data-year>2026</span> Eat For Less. Todos los derechos reservados.</p>
+        <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand">Come más. Paga menos.</p>
+      </div>
     </div>
-</section>
-</main>
+  </footer>
 
+  <button class="to-top" id="to-top" type="button" aria-label="Volver arriba">
+    <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_upward</span>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- Footer -->
-<footer class="w-full bg-surface-container-low border-t border-outline-variant/20 py-12 px-4 md:px-6">
-    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        
-        <!-- Bloque Marca & Copyright -->
-        <div class="flex flex-col items-center md:items-start gap-1">
-            <div class="flex items-center gap-2 notranslate" translate="no">
-                <img alt="Eat For Less Logo" class="h-7 w-7 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-                <span class="font-bold text-lg text-primary lowercase tracking-tight">eat for less</span>
-            </div>
-            <p class="text-xs text-on-surface-variant">© 2026 Eat For Less. Todos los derechos reservados.</p>
-        </div>
-
-        <!-- Enlaces Legales -->
-        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-semibold text-on-surface-variant">
-            <a class="hover:text-primary transition-colors duration-200" href="#">Política de Privacidad</a>
-            <a class="hover:text-primary transition-colors duration-200" href="#">Términos del Servicio</a>
-            <a class="hover:text-primary transition-colors duration-200" href="#">Acuerdo de Repartidores</a>
-            <a class="hover:text-primary transition-colors duration-200" href="#">Política de Cookies</a>
-        </div>
-
-    </div>
-</footer>
-
-<script>
-        // Función para controlar la Puerta Corrediza (Login vs Registro)
-        function toggleAuth(showRegister) {
-            const overlay = document.getElementById('sliding-overlay');
-            const loginPanel = document.getElementById('login-form-panel');
-            const registerPanel = document.getElementById('register-form-panel');
-            const overlayRegContent = document.getElementById('overlay-register-content');
-            const overlayLogContent = document.getElementById('overlay-login-content');
-
-            if (showRegister) {
-                // Modo Registro (La puerta corre a la izquierda)
-                overlay.classList.add('md:-translate-x-full');
-                
-                // Animación de los formularios
-                loginPanel.classList.remove('opacity-100', 'z-20', 'pointer-events-auto');
-                loginPanel.classList.add('opacity-0', 'z-10', 'pointer-events-none', 'md:translate-x-full');
-                
-                registerPanel.classList.remove('opacity-0', 'z-10', 'pointer-events-none');
-                registerPanel.classList.add('opacity-100', 'z-20', 'pointer-events-auto', 'md:translate-x-full');
-
-                // Cambiar el texto interior del overlay con fundido
-                overlayRegContent.classList.add('opacity-0', 'hidden');
-                overlayRegContent.classList.remove('opacity-100');
-                
-                overlayLogContent.classList.remove('hidden');
-                setTimeout(() => {
-                    overlayLogContent.classList.add('opacity-100');
-                    overlayLogContent.classList.remove('opacity-0', 'translate-x-10');
-                }, 50);
-
-            } else {
-                // Modo Login (La puerta corre a la derecha - estado por defecto)
-                overlay.classList.remove('md:-translate-x-full');
-
-                // Animación de los formularios
-                loginPanel.classList.add('opacity-100', 'z-20', 'pointer-events-auto');
-                loginPanel.classList.remove('opacity-0', 'z-10', 'pointer-events-none', 'md:translate-x-full');
-                
-                registerPanel.classList.add('opacity-0', 'z-10', 'pointer-events-none');
-                registerPanel.classList.remove('opacity-100', 'z-20', 'pointer-events-auto', 'md:translate-x-full');
-
-                // Cambiar el texto interior del overlay con fundido
-                overlayLogContent.classList.add('opacity-0', 'hidden');
-                overlayLogContent.classList.remove('opacity-100');
-                
-                overlayRegContent.classList.remove('hidden');
-                setTimeout(() => {
-                    overlayRegContent.classList.add('opacity-100');
-                    overlayRegContent.classList.remove('opacity-0');
-                }, 50);
-            }
-        }
-
-        // Micro-interacciones para botones genéricos
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
-            });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
-            });
-        });
-
-        // Intersection Observer para animaciones al hacer scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer1 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
-            observer1.observe(section);
-        });
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    // Abrir el menú quitando la clase 'hidden'
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-    }
-
-    // Cerrar el menú agregando de nuevo la clase 'hidden'
-    if (menuClose && mobileMenu) {
-        menuClose.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    }
-
-    // Cerrar automáticamente si el usuario hace clic fuera del menú lateral (en el fondo oscuro)
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    }
-});
-    </script>
-
-
-
+  <script src="assets/app.js" defer></script>
 </body>
 </html>
+
+
+

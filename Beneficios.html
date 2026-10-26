@@ -1,635 +1,485 @@
-<!DOCTYPE html>
-
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Beneficios - Eat For Less</title>
-<!-- Favicon (Icono de la pestaña) -->
-    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-container-high": "#e8e8e8",
-                      "on-primary-fixed": "#00210e",
-                      "surface-tint": "#2a6a43",
-                      "outline-variant": "#c0c9bf",
-                      "tertiary-fixed-dim": "#c4c7c6",
-                      "on-secondary-fixed": "#131e1a",
-                      "surface-variant": "#e2e2e2",
-                      "surface-bright": "#f9f9f9",
-                      "primary-fixed-dim": "#93d5a5",
-                      "on-secondary": "#ffffff",
-                      "inverse-surface": "#2f3131",
-                      "surface-container": "#eeeeee",
-                      "on-surface": "#1a1c1c",
-                      "on-tertiary-fixed-variant": "#444747",
-                      "inverse-on-surface": "#f0f1f1",
-                      "primary": "#2a6a43",
-                      "secondary": "#55615c",
-                      "on-primary": "#ffffff",
-                      "surface-container-highest": "#e2e2e2",
-                      "on-primary-fixed-variant": "#0a522d",
-                      "error": "#ba1a1a",
-                      "on-tertiary": "#ffffff",
-                      "tertiary-container": "#9da09f",
-                      "on-background": "#1a1c1c",
-                      "tertiary": "#5c5f5e",
-                      "on-secondary-container": "#5a6560",
-                      "outline": "#707971",
-                      "secondary-fixed": "#d9e5df",
-                      "on-tertiary-container": "#343737",
-                      "surface-container-low": "#f3f3f4",
-                      "primary-fixed": "#aef2c0",
-                      "on-tertiary-fixed": "#191c1c",
-                      "tertiary-fixed": "#e1e3e2",
-                      "inverse-primary": "#93d5a5",
-                      "background": "#f9f9f9",
-                      "on-error-container": "#93000a",
-                      "primary-container": "#6cad80",
-                      "surface-dim": "#dadada",
-                      "on-error": "#ffffff",
-                      "error-container": "#ffdad6",
-                      "on-secondary-fixed-variant": "#3e4945",
-                      "surface": "#f9f9f9",
-                      "on-surface-variant": "#404941",
-                      "secondary-container": "#d6e2dc",
-                      "secondary-fixed-dim": "#bdc9c3",
-                      "on-primary-container": "#003f20",
-                      "surface-container-lowest": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "stack-sm": "8px",
-                      "gutter": "24px",
-                      "section-gap": "80px",
-                      "stack-lg": "32px",
-                      "margin-mobile": "16px",
-                      "stack-md": "16px",
-                      "unit": "8px",
-                      "container-max": "1200px",
-                      "margin-desktop": "40px"
-              },
-              "fontFamily": {
-                      "headline-md": ["Poppins"],
-                      "headline-lg-mobile": ["Poppins"],
-                      "body-lg": ["Poppins"],
-                      "headline-lg": ["Poppins"],
-                      "body-md": ["Poppins"],
-                      "headline-xl": ["Poppins"],
-                      "label-md": ["Poppins"],
-                      "label-sm": ["Poppins"],
-                      "body-sm": ["Poppins"]
-              },
-              "fontSize": {
-                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
-              }
-            }
-          }
-        }
-    </script>
-<style>
-        body {
-            background-color: #F5F7F6;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .card-shadow {
-            box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05);
-        }
-        .card-shadow-hover:hover {
-            box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-    </style>
-</head>
-<body class="font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!DOCTYPE html>
-<html class="light" lang="es">
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Eat For Less | Toda tu comida favorita</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "primary-container": "#6cad80",
-                    "on-secondary": "#ffffff",
-                    "on-primary-container": "#003f20",
-                    "inverse-on-surface": "#f0f1f1",
-                    "surface-container-high": "#e8e8e8",
-                    "surface-bright": "#f9f9f9",
-                    "on-primary-fixed": "#00210e",
-                    "on-error": "#ffffff",
-                    "inverse-surface": "#2f3131",
-                    "primary-fixed-dim": "#93d5a5",
-                    "on-tertiary-fixed": "#191c1c",
-                    "background": "#f9f9f9",
-                    "surface-container-low": "#f3f3f4",
-                    "tertiary-fixed": "#e1e3e2",
-                    "primary": "#2a6a43",
-                    "on-secondary-fixed": "#131e1a",
-                    "on-tertiary": "#ffffff",
-                    "tertiary": "#5c5f5e",
-                    "secondary-container": "#d6e2dc",
-                    "on-tertiary-container": "#343737",
-                    "secondary-fixed": "#d9e5df",
-                    "outline-variant": "#c0c9bf",
-                    "on-surface-variant": "#404941",
-                    "on-primary-fixed-variant": "#0a522d",
-                    "outline": "#707971",
-                    "tertiary-fixed-dim": "#c4c7c6",
-                    "surface-container-highest": "#e2e2e2",
-                    "secondary": "#55615c",
-                    "primary-fixed": "#aef2c0",
-                    "on-background": "#1a1c1c",
-                    "surface-container": "#eeeeee",
-                    "secondary-fixed-dim": "#bdc9c3",
-                    "on-secondary-fixed-variant": "#3e4945",
-                    "on-primary": "#ffffff",
-                    "surface-tint": "#2a6a43",
-                    "surface-dim": "#dadada",
-                    "surface-container-lowest": "#ffffff",
-                    "on-surface": "#1a1c1c",
-                    "inverse-primary": "#93d5a5",
-                    "on-error-container": "#93000a",
-                    "on-tertiary-fixed-variant": "#444747",
-                    "surface-variant": "#e2e2e2",
-                    "surface": "#f9f9f9",
-                    "error": "#ba1a1a",
-                    "tertiary-container": "#9da09f",
-                    "error-container": "#ffdad6",
-                    "on-secondary-container": "#5a6560"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "unit": "8px",
-                    "stack-md": "16px",
-                    "stack-lg": "32px",
-                    "gutter": "24px",
-                    "section-gap": "80px",
-                    "stack-sm": "8px",
-                    "margin-mobile": "16px",
-                    "margin-desktop": "40px",
-                    "container-max": "1200px"
-            },
-            "fontFamily": {
-                    "headline-xl": ["Poppins"],
-                    "headline-lg-mobile": ["Poppins"],
-                    "body-sm": ["Poppins"],
-                    "headline-md": ["Poppins"],
-                    "label-sm": ["Poppins"],
-                    "body-lg": ["Poppins"],
-                    "headline-lg": ["Poppins"],
-                    "label-md": ["Poppins"],
-                    "body-md": ["Poppins"]
-            },
-            "fontSize": {
-                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            color: #1a1c1c;
-            overflow-x: hidden;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .shadow-level-1 { box-shadow: 0 4px 20px rgba(47, 58, 54, 0.05); }
-        .shadow-level-2 { box-shadow: 0 12px 32px rgba(47, 58, 54, 0.08); }
-        .shadow-level-3 { box-shadow: 0 20px 48px rgba(47, 58, 54, 0.12); }
-        
-        .floating-anim {
-            animation: floating 3s ease-in-out infinite;
-        }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beneficios | Eat For Less</title>
+  <meta name="description" content="Beneficios para clientes, restaurantes y repartidores: precios justos, más visibilidad local y horarios flexibles. Descubre todo lo que Eat For Less trae para ti.">
+  <meta name="theme-color" content="#A4C516">
+  <meta property="og:title" content="Beneficios | Eat For Less">
+  <meta property="og:description" content="Una plataforma donde todos ganan: clientes, restaurantes y repartidores locales.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Poppins:wght@700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="antialiased">
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<!-- TopAppBar -->
-<header class="w-full bg-white/95 backdrop-blur-md border-b border-surface-container-high sticky top-0 z-50 transition-all duration-300 shadow-sm relative overflow-x-clip">
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center px-3 sm:px-6 py-2.5">
-        
-        <!-- Bloque Izquierdo: Logo y Marca -->
-        <a href="index.html" class="flex items-center gap-2 shrink-0 group">
-            <div class="relative overflow-hidden rounded-lg border border-black/5 p-0.5 group-hover:scale-105 transition-transform duration-200">
-                <img alt="Eat For Less Logo" class="h-8 w-8 md:h-9 md:w-9 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-            </div>
-            <span class="text-lg md:text-xl font-black text-primary tracking-tight lowercase whitespace-nowrap group-hover:text-primary/90 transition-colors">
-                eat for less
-            </span>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="Eat For Less" width="42" height="42">
+        </span>
+        <span class="brand-name">eat<span>for</span>less</span>
+      </a>
+
+      <nav class="nav-pill" aria-label="Navegación principal">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="comoFunciona.html">Cómo funciona</a>
+        <a class="nav-link is-active" href="Beneficios.html" aria-current="page">Beneficios</a>
+        <a class="nav-link" href="inforepartidor.html">Repartidores</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-lime btn-sm header-cta" href="index.html#descargar">
+          <span class="btn-label">Descargar</span>
+          <span class="material-symbols-outlined" aria-hidden="true" translate="no">download</span>
         </a>
-
-        <!-- Bloque Central: Navegación Principal (Escritorio) -->
-        <nav class="hidden md:flex items-center gap-1">
-            <a href="index.html" class="text-sm font-bold text-primary bg-primary/10 px-4 py-2 rounded-full whitespace-nowrap transition-all duration-200 hover:scale-105">
-                <span>Inicio</span>
-            </a>
-            <a href="comoFunciona.html" class="text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105">
-                <span>¿Cómo funciona?</span>
-            </a>
-            <a href="Beneficios.html" class="text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-4 py-2 rounded-full transition-all duration-200 whitespace-nowrap hover:scale-105">
-                <span>Beneficios</span>
-            </a>
-        </nav>
-
-        <!-- Bloque Derecho: Acciones -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <!-- Botón Descargar (Escritorio / Tablet) -->
-            <a href="#descargar" class="hidden sm:flex bg-primary hover:bg-primary/90 text-white text-xs md:text-sm font-semibold px-3.5 md:px-4 py-1.5 md:py-2 rounded-full transition-all duration-200 hover:scale-105 items-center gap-1 whitespace-nowrap shrink-0 shadow-sm">
-                <span>Descargar</span>
-                <span class="material-symbols-outlined text-base notranslate" translate="no">download</span>
-            </a>
-
-            <!-- Botón Hamburguesa Móvil -->
-            <details class="md:hidden relative group">
-                <summary class="text-primary hover:bg-black/5 p-1.5 rounded-full transition-transform duration-200 active:scale-95 flex items-center justify-center shrink-0 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-                    <span class="material-symbols-outlined text-2xl select-none notranslate" translate="no">menu</span>
-                </summary>
-                
-                <!-- Menú Desplegable Móvil -->
-                <div class="fixed top-[58px] left-0 w-full bg-white border-b border-surface-container-high shadow-lg px-5 py-3.5 space-y-2 z-50">
-                    <a href="index.html" class="block text-sm font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg">
-                        <span>Inicio</span>
-                    </a>
-                    <a href="comoFunciona.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                        <span>¿Cómo funciona?</span>
-                    </a>
-                    <a href="Beneficios.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                        <span>Beneficios</span>
-                    </a>
-                    
-                    <div class="pt-2 border-t border-surface-container-high flex flex-col gap-2">
-                        <a href="inforepartidor.html" class="block text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-black/5 px-3.5 py-2 rounded-lg transition-colors">
-                            <span>Sé un Repartidor</span>
-                        </a>
-                        
-                        <!-- Botón Descargar App (Ajustado para Móvil) -->
-                        <a href="#descargar" class="sm:hidden flex items-center justify-center gap-1 bg-primary text-white text-xs font-semibold px-3 py-2 rounded-lg text-center shadow-sm w-full transition-transform active:scale-95">
-                            <span>Descargar App</span>
-                            <span class="material-symbols-outlined text-sm notranslate" translate="no">download</span>
-                        </a>
-                    </div>
-                </div>
-            </details>
-        </div>
+        <button class="menu-btn" id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="material-symbols-outlined" aria-hidden="true" translate="no">menu</span>
+        </button>
+      </div>
     </div>
-</header>
+  </header>
 
-<script>
-  // Cerrar menú al hacer clic fuera
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('details')) {
-      document.querySelectorAll('details').forEach(d => d.removeAttribute('open'));
-    }
-  });
-</script>
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Menú móvil">
+    <div class="drawer-head">
+      <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+        <span class="brand-mark">
+          <img src="assets/logo.jpg" alt="" width="42" height="42">
+        </span>
+        <span class="brand-name">eat<span>for</span>less</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Cerrar menú">
+        <span class="material-symbols-outlined" aria-hidden="true" translate="no">close</span>
+      </button>
+    </div>
 
-<script>
-  // Resalta el enlace del header correspondiente a la página actual
-  (function () {
-    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const header = document.querySelector('header');
-    if (!header) return;
+    <nav class="drawer-nav" aria-label="Secciones">
+      <a class="drawer-link" href="index.html">Inicio <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="comoFunciona.html">Cómo funciona <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="Beneficios.html" aria-current="page">Beneficios <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+      <a class="drawer-link" href="inforepartidor.html">Sé repartidor <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_outward</span></a>
+    </nav>
 
-    header.querySelectorAll('nav a[href], details a[href]').forEach((link) => {
-      const href = (link.getAttribute('href') || '').toLowerCase().split('#')[0].split('?')[0];
-      if (href.indexOf('.html') === -1) return;
-      const isDesktop = link.classList.contains('rounded-full');
+    <div class="drawer-foot">
+      <div class="drawer-note">
+        <span class="material-symbols-outlined" aria-hidden="true" translate="no">rocket_launch</span>
+        <span>Muy pronto en App Store y Google Play. Estamos afinando los últimos detalles.</span>
+      </div>
+      <a class="btn btn-lime btn-block" href="index.html#descargar">Descargar app</a>
+      <a class="btn btn-outline btn-block" href="inforepartidor.html">Quiero ser repartidor</a>
+    </div>
+  </aside>
 
-      if (href === current) {
-        if (isDesktop) {
-          link.classList.add('font-bold', 'text-primary', 'bg-primary/10');
-          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
-        } else {
-          link.classList.add('font-semibold', 'text-primary', 'bg-primary/10');
-          link.classList.remove('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
-        }
-      } else {
-        if (isDesktop) {
-          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5');
-          link.classList.remove('font-bold', 'text-primary', 'bg-primary/10');
-        } else {
-          link.classList.add('font-medium', 'text-on-surface-variant', 'hover:text-primary', 'hover:bg-black/5', 'transition-colors');
-          link.classList.remove('font-semibold', 'text-primary', 'bg-primary/10');
-        }
-      }
-    });
-  })();
-</script>
-<main>
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-4 md:px-10 pt-12 pb-16">
-
-    <!-- Hero Video -->
-    <div class="relative w-full h-[500px] lg:h-[650px] overflow-hidden rounded-[32px] shadow-2xl bg-black">
-
-        <!-- Video -->
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="repartidor1.jpg"
-            class="absolute inset-0 w-full h-full object-cover object-top">
-
-            <source src="repartidor1.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
+  <main id="main">
+    <!-- HERO -->
+    <section class="px-4 md:px-6 pt-5 md:pt-7">
+      <div class="max-w-[1320px] mx-auto relative overflow-hidden rounded-[32px] md:rounded-[40px] min-h-[560px] md:min-h-[620px] flex items-end">
+        <video autoplay muted loop playsinline preload="metadata" data-autoplay poster="https://images.unsplash.com/photo-1526367790999-0150786686a2?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover object-top" aria-label="Repartidor de Eat For Less en la calle">
+          <source src="repartidor1.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
         </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/65 to-ink/10" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-ink/55 via-transparent to-transparent" aria-hidden="true"></div>
 
-        <!-- Gradiente -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
-
-        <!-- Contenido -->
-        <div class="absolute bottom-12 left-12 max-w-xl text-white">
-
-          
-
-            <h2 class="text-5xl font-extrabold leading-tight mb-5">
-                Únete a la revolución<br>
-                de la comida
-            </h2>
-
-            <p class="text-xl text-white/90 leading-relaxed">
-                Ahorra como cliente o genera ingresos como repartidor.
+        <div class="relative w-full p-6 pb-16 sm:p-9 sm:pb-20 md:p-12 md:pb-16 lg:p-14 lg:pb-20">
+          <div class="max-w-3xl hero-copy">
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand">
+              <span class="live-dot" aria-hidden="true"></span>
+              Beneficios para todos
+            </span>
+            <h1 class="mt-6 text-[clamp(2.6rem,6.2vw,4.8rem)] text-white leading-[0.98]">
+              Todos ganan.<br><span class="text-brand">Todos ahorran.</span>
+            </h1>
+            <p class="mt-5 max-w-xl text-[1rem] md:text-lg leading-relaxed text-white/75">
+              Ya seas un amante de la comida, un restaurante que quiere crecer o un repartidor que busca libertad, Eat For Less está diseñado para que ganes tú.
             </p>
-
+            <div class="mt-7 flex flex-col sm:flex-row gap-3">
+              <a class="btn btn-lime btn-lg" href="#beneficios">
+                Explorar beneficios
+                <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_downward</span>
+              </a>
+              <a class="btn btn-outline btn-lg" href="inforepartidor.html">Quiero ser repartidor</a>
+            </div>
+          </div>
         </div>
 
-    </div>
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 hidden sm:flex items-center gap-2 rounded-full border border-white/15 bg-white/10 backdrop-blur px-4 py-2 text-[0.7rem] font-semibold text-white/80">
+          <span class="material-symbols-outlined text-[17px] text-brand" aria-hidden="true" translate="no">location_on</span>
+          Próximo lanzamiento
+        </div>
+      </div>
+    </section>
 
-  <!-- Título Principal -->
-<div class="max-w-3xl mx-auto text-center mt-12 sm:mt-20 px-4">
-    <h1 class="text-3xl sm:text-5xl font-extrabold text-on-surface mb-4 sm:mb-6">
-        Beneficios para todos
-    </h1>
-    <p class="text-base sm:text-xl text-on-surface-variant leading-relaxed">
-        Ya seas un amante de la comida buscando ahorrar, un restaurante buscando crecer o un repartidor buscando trabajar con libertad, Eat For Less tiene beneficios diseñados para ti.
-    </p>
-</div>
+    <!-- STAT STRIP -->
+    <section class="px-4 md:px-6 -mt-9 relative z-10">
+      <div class="max-w-[980px] mx-auto stat-strip">
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Comercio local</span>
+        </div>
+        <div class="stat">
+          <strong>0</strong>
+          <span>Tarifas ocultas</span>
+        </div>
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Soporte humano</span>
+        </div>
+      </div>
+    </section>
 
-<!-- Beneficios para Usuarios Bento Grid -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 sm:py-section-gap">
-    <div class="mb-8 sm:mb-12">
-        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Para Usuarios</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">Disfruta de la mejor comida sin vaciar tu cartera.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-gutter">
-        <!-- Bento Item 1: Precios -->
-        <div class="bg-surface rounded-[24px] p-6 card-shadow card-shadow-hover md:col-span-2 flex flex-col justify-between min-h-[260px] relative overflow-hidden group">
-            <div class="relative z-10 w-full sm:w-2/3">
-                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 sm:mb-6">
-                    <span class="material-symbols-outlined" data-icon="payments">payments</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-2 sm:mb-3">Precios Bajos Garantizados</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">Negociamos directamente con los restaurantes para ofrecerte los mejores precios, siempre cuidando tu economía.</p>
-            </div>
-            <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 sm:opacity-20 group-hover:opacity-30 transition-opacity pointer-events-none">
-                <div class="w-full h-full bg-cover bg-right" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPECkQ2N6jmljs1RKfn_tJ8AU71LXUf6EHtnhSofmWFNXp1Oz-GKHvAfDdVV59npZUeYM_Jij3Q2XGh86MJdv0uzAagpIrERwdqW3D9TpIQeEs_yYl2ntczopSTjdI-oulDdo8Pk66uNJUytcBEZLJ6EhQ4Gl2DZHzb0mMeS6xXVPImA58LJy64AgH9vtJiI5xQD570ulxoeQ318lNTdUNoZS4OrgsMZUFZTwHK3mvSGLYZAW1WglGKg')"></div>
-            </div>
+    <!-- BENEFITS TABS -->
+    <section class="section" id="beneficios" data-tabs>
+      <div class="container">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <span class="launch-pill">Elige tu perfil</span>
+          <h2 class="mt-5 text-[clamp(2rem,4.4vw,3.4rem)]">Pensado para ti. De verdad.</h2>
+          <p class="mt-4 text-muted leading-relaxed">Tres formas de ganar con Eat For Less. Cambia de perfil y descubre lo que tenemos para ti.</p>
         </div>
 
-        <!-- Bento Item 2: Variedad -->
-        <div class="bg-primary-container text-on-primary-container rounded-[24px] p-6 card-shadow card-shadow-hover flex flex-col justify-between min-h-[240px] sm:min-h-[260px]">
+        <div class="tabs-wrap is-sticky mt-8">
+          <div class="tabs" role="tablist" aria-label="Beneficios por tipo de usuario">
+            <button class="tab" type="button" role="tab" id="tab-users" aria-controls="panel-users" aria-selected="true" tabindex="0">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span>
+              Usuarios
+            </button>
+            <button class="tab" type="button" role="tab" id="tab-restaurants" aria-controls="panel-restaurants" aria-selected="false" tabindex="-1">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">storefront</span>
+              Restaurantes
+            </button>
+            <button class="tab" type="button" role="tab" id="tab-drivers" aria-controls="panel-drivers" aria-selected="false" tabindex="-1">
+              <span class="material-symbols-outlined" aria-hidden="true" translate="no">two_wheeler</span>
+              Repartidores
+            </button>
+          </div>
+        </div>
+
+        <!-- Panel: Users -->
+        <div class="tab-panel" id="panel-users" role="tabpanel" aria-labelledby="tab-users" tabindex="0">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
             <div>
-                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 sm:mb-6 text-on-primary-container">
-                    <span class="material-symbols-outlined" data-icon="storefront">storefront</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-2 sm:mb-3">Restaurantes Locales</h3>
-                <p class="font-body-sm text-body-sm opacity-90">Apoya a tu comunidad probando los mejores tesoros culinarios ocultos en tu ciudad.</p>
+              <h3 class="text-2xl md:text-3xl">Para usuarios</h3>
+              <p class="mt-2 text-muted text-[0.95rem]">Disfruta de la mejor comida sin vaciar tu cartera.</p>
             </div>
-        </div>
+            <a class="btn btn-lime btn-sm shrink-0" href="index.html#descargar">Quiero pedir</a>
+          </div>
 
-        <!-- Bento Item 3: Rapidez -->
-        <div class="bg-surface rounded-[24px] p-6 card-shadow card-shadow-hover md:col-span-3 flex flex-col md:flex-row items-center gap-6 md:gap-8 overflow-hidden">
-            <div class="flex-1 w-full">
-                <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mb-4 sm:mb-6">
-                    <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-2 sm:mb-3">Entrega Rápida</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">Nuestra red de repartidores optimizada asegura que tu comida llegue caliente y fresca en tiempo récord.</p>
-            </div>
-            <div class="flex-1 w-full h-[160px] sm:h-[200px] rounded-xl overflow-hidden relative shrink-0">
-                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_fqh1vZITh9bx3VWkwvy_FV5t87vUCA0FxdGqOpRvc-qpSMmee0CTy9u-tkHqhg_noZefPQYijxoq-RAEa24ZypVQijevoEyqcJ7XQtLSPy4ujX5acNQ2BsRYfrIYCfg6VedqBdx54mTU-0cb4HqLSyQ30ipHioyf9A2MwG79AaxNFzAgpXA0ZoSqO6B4_2Ew85Qu3it2FdTNL65SRRaO-aOCMfIuPaGEj9rbLAQNIJ1rYCP-IjI4uA')"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Beneficios para Restaurantes -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 sm:py-section-gap">
-    <div class="mb-8 sm:mb-12">
-        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Para Restaurantes</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">Impulsa tu negocio local con nuestra plataforma.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-gutter">
-        <!-- Restaurante Item 1 -->
-        <div class="bg-surface rounded-[24px] p-6 card-shadow card-shadow-hover flex flex-col justify-between min-h-[240px] sm:min-h-[260px]">
-            <div>
-                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 sm:mb-6">
-                    <span class="material-symbols-outlined">visibility</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-2 sm:mb-3">Mayor Visibilidad</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Llega a miles de nuevos clientes en tu zona que buscan las mejores opciones locales.</p>
-            </div>
-        </div>
-
-        <!-- Restaurante Item 2 -->
-        <div class="bg-surface rounded-[24px] p-6 card-shadow card-shadow-hover flex flex-col justify-between min-h-[240px] sm:min-h-[260px]">
-            <div>
-                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 sm:mb-6">
-                    <span class="material-symbols-outlined">settings_suggest</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-2 sm:mb-3">Gestión Inteligente</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Herramientas intuitivas para gestionar tus pedidos y menús de forma eficiente y sin errores.</p>
-            </div>
-        </div>
-
-        <!-- Restaurante Item 3 -->
-        <div class="bg-primary-container text-on-primary-container rounded-[24px] p-6 card-shadow card-shadow-hover flex flex-col justify-between min-h-[240px] sm:min-h-[260px]">
-            <div>
-                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 sm:mb-6 text-on-primary-container">
-                    <span class="material-symbols-outlined">trending_up</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-2 sm:mb-3">Crecimiento Sostenible</h3>
-                <p class="font-body-sm text-body-sm opacity-90">Comisiones justas diseñadas para que tu negocio crezca de manera rentable y saludable.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Beneficios para Repartidores -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 sm:py-section-gap">
-    <div class="mb-8 sm:mb-12">
-        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Para Repartidores</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">Sé tu propio jefe con las mejores condiciones.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-gutter">
-        <!-- Repartidor Item 1 -->
-        <div class="bg-surface rounded-[24px] p-5 sm:p-8 card-shadow flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-surface-container-high rounded-[16px] flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined" data-icon="schedule">schedule</span>
-            </div>
-            <div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-1.5 sm:mb-2">Horarios Flexibles</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">Trabaja cuando quieras y donde quieras. Tú decides tus horas, sin presiones ni compromisos fijos.</p>
-            </div>
-        </div>
-
-        <!-- Repartidor Item 2 -->
-        <div class="bg-surface rounded-[24px] p-5 sm:p-8 card-shadow flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-surface-container-high rounded-[16px] flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
-            </div>
-            <div>
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-1.5 sm:mb-2">Ganancias Competitivas</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">Ofrecemos las mejores tarifas del mercado, con bonos por alta demanda y propinas íntegras para ti.</p>
-            </div>
-        </div>
-
-        <!-- Repartidor Item 3 -->
-        <div class="bg-surface rounded-[24px] p-5 sm:p-8 card-shadow flex flex-col sm:flex-row gap-4 sm:gap-6 items-start md:col-span-2">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-surface-container-high rounded-[16px] flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined" data-icon="description">description</span>
-            </div>
-            <div class="max-w-2xl">
-                <h3 class="font-headline-md text-headline-md text-on-surface mb-1.5 sm:mb-2">Sin Papeleo Complejo</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">Regístrate en minutos desde la app. Solo necesitas tu documento de identidad y un medio de transporte. Nosotros nos encargamos del resto para que empieces a generar ingresos de inmediato.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-</main>
-<!-- Footer Extendido -->
-<footer class="bg-white border-t border-surface-container-high pt-10 pb-8 w-full">
-    <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
-        
-        <!-- Grid Principal -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-10">
-            
-            <!-- Marca: Ocupa el ancho completo arriba en móvil -->
-            <div class="md:col-span-4 space-y-3 pb-6 md:pb-0 border-b md:border-none border-surface-container-high">
-                <a href="index.html" class="inline-flex items-center gap-2 notranslate" translate="no">
-                    <img alt="Eat For Less Logo" class="h-8 w-8 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWtFLcWX0JVkfWzt1PMKrqkUBLdbtz3bfIpQUMP0b7wRL7AIAtGS3wJJpz-LYCSyD3E3T1jQQAHsRdYMlNHkYmJJl0DnT8BGBfeaJmdAYwfRL72foImFYHBUrNv5QwN5Hs1ltpUwU6UHs5vyoDXhwmixXt0xpfqbs_46BgZldj5n7yMg-WJor3s5QGg7ddlhRyUN1K1SO39IXY93ZmCWR4vdYc2fYf4AVx_2oxRaOSPDzoOZGD5T0xkVuxq5N6pWJSWoShWMZCpqjv"/>
-                    <span class="font-bold text-primary text-xl lowercase tracking-tight">eat for less</span>
-                </a>
-                <p class="text-xs text-on-surface-variant leading-relaxed max-w-sm">
-                    La plataforma de entrega gastronómica diseñada para conectar clientes, restaurantes y repartidores locales de manera justa y eficiente.
+          <div class="grid md:grid-cols-3 gap-5">
+            <article class="md:col-span-2 card card-hover relative overflow-hidden p-7 md:p-9 min-h-[260px] flex flex-col justify-between">
+              <div class="relative z-10 max-w-md">
+                <span class="icon-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true" translate="no">payments</span>
+                </span>
+                <h3 class="mt-6 text-2xl">Precios bajos garantizados</h3>
+                <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">
+                  Negociamos directamente con los restaurantes para ofrecerte los mejores precios, siempre cuidando tu economía.
                 </p>
-            </div>
+              </div>
+              <div class="absolute right-0 top-0 w-1/2 h-full opacity-[0.14] pointer-events-none" aria-hidden="true">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPECkQ2N6jmljs1RKfn_tJ8AU71LXUf6EHtnhSofmWFNXp1Oz-GKHvAfDdVV59npZUeYM_Jij3Q2XGh86MJdv0uzAagpIrERwdqW3D9TpIQeEs_yYl2ntczopSTjdI-oulDdo8Pk66uNJUytcBEZLJ6EhQ4Gl2DZHzb0mMeS6xXVPImA58LJy64AgH9vtJiI5xQD570ulxoeQ318lNTdUNoZS4OrgsMZUFZTwHK3mvSGLYZAW1WglGKg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+              <div class="relative z-10 mt-6 inline-flex items-center gap-2 text-[0.75rem] font-bold text-brand-deep">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand" aria-hidden="true"></span>
+                Ahorro real en cada pedido
+              </div>
+            </article>
 
-            <!-- Contenedor de Enlaces: Grid Móvil Simétrico (2 columnas parejas) -->
-            <div class="md:col-span-8 grid grid-cols-2 gap-x-6 gap-y-8">
-                
-                <!-- Columna 1: Navegación -->
-                <div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Navegación</h4>
-                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
-                        <li><a href="index.html" class="hover:text-primary transition-colors block">Inicio</a></li>
-                        <li><a href="comofunciona.html" class="hover:text-primary transition-colors block">¿Cómo funciona?</a></li>
-                        <li><a href="beneficios.html" class="hover:text-primary transition-colors block">Beneficios</a></li>
-                        <li><a href="#features" class="hover:text-primary transition-colors block">Características</a></li>
-                    </ul>
-                </div>
+            <article class="card card-hover p-7 md:p-8 bg-brand-soft border-brand/30 flex flex-col justify-between min-h-[260px]">
+              <div>
+                <span class="icon-badge bg-brand text-ink">
+                  <span class="material-symbols-outlined" aria-hidden="true" translate="no">storefront</span>
+                </span>
+                <h3 class="mt-6 text-2xl">Restaurantes locales</h3>
+                <p class="mt-3 text-[0.9rem] text-ink-soft leading-relaxed">
+                  Apoya a tu comunidad probando los mejores tesoros culinarios de tu ciudad.
+                </p>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-[0.75rem] font-bold text-brand-deep">
+                <span class="material-symbols-outlined text-[17px]" aria-hidden="true" translate="no">favorite</span>
+                Sabor de barrio
+              </span>
+            </article>
 
-                <!-- Columna 2: Únete -->
-                <div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Únete</h4>
-                    <ul class="space-y-2.5 text-xs text-on-surface-variant">
-                        <li><a href="inforepartidor.html" class="hover:text-primary transition-colors block">Sé un Repartidor</a></li>
-                        <li><a href="#restaurantes" class="hover:text-primary transition-colors block">Registra tu Restaurante</a></li>
-                    </ul>
-                </div>
+            <article class="card card-hover p-7 md:p-8 min-h-[220px] flex flex-col justify-between">
+              <div>
+                <span class="icon-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true" translate="no">receipt_long</span>
+                </span>
+                <h3 class="mt-6 text-xl">Transparencia total</h3>
+                <p class="mt-3 text-[0.88rem] text-muted leading-relaxed">Precio final, tiempo estimado y estado del pedido siempre a la vista.</p>
+              </div>
+            </article>
 
-                <!-- Columna 3 (Ocupa las 2 columnas en móvil para alinearse perfectamente y abarcar todo el ancho) -->
-                <div class="col-span-2 sm:col-span-1 pt-2 sm:pt-0 border-t sm:border-none border-surface-container-high">
-                    <h4 class="font-bold text-xs uppercase tracking-wider text-on-background mb-3">Legal & Soporte</h4>
-                    <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2 text-xs text-on-surface-variant">
-                        <li><a href="#" class="hover:text-primary transition-colors block">Términos y Cond.</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors block">Privacidad</a></li>
-                        <li><a href="#faq" class="hover:text-primary transition-colors block">Preguntas Frecuentes</a></li>
-                        <li><a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors block">Contacto</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
+            <article class="md:col-span-2 card card-hover overflow-hidden grid sm:grid-cols-2 min-h-[220px]">
+              <div class="p-7 md:p-8 flex flex-col justify-center">
+                <span class="icon-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true" translate="no">bolt</span>
+                </span>
+                <h3 class="mt-6 text-xl">Entrega rápida</h3>
+                <p class="mt-3 text-[0.88rem] text-muted leading-relaxed">Nuestra red de repartidores está optimizada para que tu comida llegue caliente y fresca.</p>
+              </div>
+              <div class="relative min-h-[180px] media-zoom">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_fqh1vZITh9bx3VWkwvy_FV5t87vUCA0FxdGqOpRvc-qpSMmee0CTy9u-tkHqhg_noZefPQYijxoq-RAEa24ZypVQijevoEyqcJ7XQtLSPy4ujX5acNQ2BsRYfrIYCfg6VedqBdx54mTU-0cb4HqLSyQ30ipHioyf9A2MwG79AaxNFzAgpXA0ZoSqO6B4_2Ew85Qu3it2FdTNL65SRRaO-aOCMfIuPaGEj9rbLAQNIJ1rYCP-IjI4uA" alt="Entrega rápida de comida" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+            </article>
+          </div>
         </div>
 
-        <!-- Barra Inferior -->
-        <div class="border-t border-surface-container-high pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-            <p class="text-xs text-on-surface-variant">© 2026 Eat For Less. Todos los derechos reservados.</p>
-            <div class="flex items-center gap-5 text-on-surface-variant">
-                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Compartir"><span class="material-symbols-outlined text-lg notranslate" translate="no">share</span></a>
-                <a href="mailto:soporte@eatforless.com" class="hover:text-primary transition-colors p-1" aria-label="Correo"><span class="material-symbols-outlined text-lg notranslate" translate="no">mail</span></a>
-                <a href="#" class="hover:text-primary transition-colors p-1" aria-label="Llamar"><span class="material-symbols-outlined text-lg notranslate" translate="no">call</span></a>
+        <!-- Panel: Restaurants -->
+        <div class="tab-panel" id="panel-restaurants" role="tabpanel" aria-labelledby="tab-restaurants" tabindex="0" hidden>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+            <div>
+              <h3 class="text-2xl md:text-3xl">Para restaurantes</h3>
+              <p class="mt-2 text-muted text-[0.95rem]">Impulsa tu negocio local con una plataforma que cuida tus márgenes.</p>
             </div>
+            <a class="btn btn-dark btn-sm shrink-0" href="mailto:soporte@eatforless.com?subject=Interes%20en%20sumarme%20como%20Restaurante%20Aliado">Quiero ser aliado</a>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5">
+            <article class="card card-hover p-7 md:p-8 min-h-[240px]">
+              <span class="icon-badge">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">visibility</span>
+              </span>
+              <h3 class="mt-6 text-xl">Mayor visibilidad</h3>
+              <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Llega a miles de nuevos clientes en tu zona que buscan las mejores opciones locales.</p>
+            </article>
+
+            <article class="card card-hover p-7 md:p-8 min-h-[240px]">
+              <span class="icon-badge">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">settings_suggest</span>
+              </span>
+              <h3 class="mt-6 text-xl">Gestión inteligente</h3>
+              <p class="mt-3 text-[0.9rem] text-muted leading-relaxed">Herramientas intuitivas para gestionar pedidos y menús de forma eficiente, sin errores.</p>
+            </article>
+
+            <article class="card card-hover p-7 md:p-8 min-h-[240px] bg-brand-soft border-brand/30">
+              <span class="icon-badge bg-brand text-ink">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">trending_up</span>
+              </span>
+              <h3 class="mt-6 text-xl">Crecimiento sostenible</h3>
+              <p class="mt-3 text-[0.9rem] text-ink-soft leading-relaxed">Comisiones justas diseñadas para que tu negocio crezca de manera rentable y saludable.</p>
+            </article>
+
+            <article class="md:col-span-3 card overflow-hidden grid md:grid-cols-2">
+              <div class="p-7 md:p-9">
+                <span class="launch-pill">Sin sorpresas</span>
+                <h3 class="mt-4 text-2xl">Comisiones claras desde el primer día</h3>
+                <p class="mt-3 text-[0.9rem] text-muted leading-relaxed max-w-lg">
+                  Queremos que sumarte sea una decisión fácil. Antes de publicar tu menú, te explicamos exactamente cómo funciona el modelo y cuánto recibes por pedido.
+                </p>
+                <ul class="mt-5 space-y-2.5">
+                  <li class="flex items-center gap-2.5 text-[0.85rem] font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">check_circle</span>
+                    Tarifas competitivas y transparentes
+                  </li>
+                  <li class="flex items-center gap-2.5 text-[0.85rem] font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">check_circle</span>
+                    Soporte dedicado para comercios aliados
+                  </li>
+                  <li class="flex items-center gap-2.5 text-[0.85rem] font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-brand-deep" aria-hidden="true" translate="no">check_circle</span>
+                    Prioridad de visibilidad durante el lanzamiento
+                  </li>
+                </ul>
+                <a class="btn btn-lime mt-6" href="mailto:soporte@eatforless.com?subject=Quiero%20mas%20informacion%20para%20mi%20restaurante">
+                  Solicitar información
+                  <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_forward</span>
+                </a>
+              </div>
+              <div class="relative min-h-[280px] media-zoom">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Interior de un restaurante local" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" aria-hidden="true"></div>
+              </div>
+            </article>
+          </div>
         </div>
 
+        <!-- Panel: Drivers -->
+        <div class="tab-panel" id="panel-drivers" role="tabpanel" aria-labelledby="tab-drivers" tabindex="0" hidden>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+            <div>
+              <h3 class="text-2xl md:text-3xl">Para repartidores</h3>
+              <p class="mt-2 text-muted text-[0.95rem]">Sé tu propio jefe con condiciones claras y flexibles.</p>
+            </div>
+            <a class="btn btn-lime btn-sm shrink-0" href="inforepartidor.html">Quiero unirme</a>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5">
+            <article class="card card-hover p-6 md:p-7 flex gap-4 items-start min-h-[170px]">
+              <span class="icon-badge shrink-0">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">schedule</span>
+              </span>
+              <div>
+                <h3 class="text-xl">Horarios flexibles</h3>
+                <p class="mt-2 text-[0.86rem] text-muted leading-relaxed">Trabaja cuando quieras y donde quieras. Tú decides tus horas, sin presiones ni compromisos fijos.</p>
+              </div>
+            </article>
+
+            <article class="card card-hover p-6 md:p-7 flex gap-4 items-start min-h-[170px]">
+              <span class="icon-badge shrink-0">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">trending_up</span>
+              </span>
+              <div>
+                <h3 class="text-xl">Ganancias competitivas</h3>
+                <p class="mt-2 text-[0.86rem] text-muted leading-relaxed">Tarifas claras, bonos por alta demanda y propinas íntegras para ti.</p>
+              </div>
+            </article>
+
+            <article class="card card-hover p-6 md:p-7 flex gap-4 items-start min-h-[170px]">
+              <span class="icon-badge shrink-0">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">description</span>
+              </span>
+              <div>
+                <h3 class="text-xl">Sin papeleo complejo</h3>
+                <p class="mt-2 text-[0.86rem] text-muted leading-relaxed">Regístrate en minutos. Solo necesitas identificación y un medio de transporte.</p>
+              </div>
+            </article>
+
+            <article class="md:col-span-3 rounded-[26px] bg-ink text-white p-7 md:p-9 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div class="glow glow-lime" style="width: 360px; height: 360px; top: -200px; right: -80px;"></div>
+              <div class="relative max-w-xl">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-brand">
+                  <span class="material-symbols-outlined text-[16px]" aria-hidden="true" translate="no">support_agent</span>
+                  Nunca estarás solo
+                </span>
+                <h3 class="mt-4 text-2xl">Soporte real en cada entrega</h3>
+                <p class="mt-2 text-[0.9rem] text-white/60 leading-relaxed">Si tienes un problema en la ruta, nuestro equipo está disponible para ayudarte a resolverlo rápido.</p>
+              </div>
+              <a class="btn btn-lime relative shrink-0" href="inforepartidor.html">
+                Empieza a conducir
+                <span class="material-symbols-outlined arrow" aria-hidden="true" translate="no">arrow_forward</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMITMENT -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-dark rounded-[36px] p-7 sm:p-10 md:p-14 reveal">
+          <div class="glow glow-lime" style="width: 480px; height: 480px; top: -260px; left: -100px;"></div>
+          <div class="relative grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand">
+                Nuestro compromiso
+              </span>
+              <h2 class="mt-5 text-[clamp(1.9rem,4vw,3.1rem)] max-w-2xl">Un modelo más justo para toda la mesa.</h2>
+              <div class="mt-7 grid sm:grid-cols-3 gap-4 max-w-3xl">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span class="material-symbols-outlined text-brand text-[22px]" aria-hidden="true" translate="no">verified</span>
+                  <p class="mt-2 text-[0.8rem] font-bold text-white">Precios claros</p>
+                  <p class="mt-1 text-[0.72rem] text-white/50">Sin cargos escondidos.</p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span class="material-symbols-outlined text-brand text-[22px]" aria-hidden="true" translate="no">storefront</span>
+                  <p class="mt-2 text-[0.8rem] font-bold text-white">Comercio local</p>
+                  <p class="mt-1 text-[0.72rem] text-white/50">Tu barrio, primero.</p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span class="material-symbols-outlined text-brand text-[22px]" aria-hidden="true" translate="no">two_wheeler</span>
+                  <p class="mt-2 text-[0.8rem] font-bold text-white">Reparto digno</p>
+                  <p class="mt-1 text-[0.72rem] text-white/50">Flexibilidad y respeto.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 lg:items-end">
+              <a class="btn btn-lime btn-lg" href="index.html#descargar">Quiero probarlo</a>
+              <a class="btn btn-outline btn-lg" href="mailto:soporte@eatforless.com?subject=Quiero%20saber%20mas%20de%20Eat%20For%20Less">Hablar con el equipo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14">
+        <div class="md:col-span-5 footer-brand">
+          <a class="brand" href="index.html" aria-label="Eat For Less, inicio">
+            <span class="brand-mark">
+              <img src="assets/logo.jpg" alt="" width="42" height="42">
+            </span>
+            <span class="brand-name">eat<span>for</span>less</span>
+          </a>
+          <p class="mt-4 max-w-sm text-[0.85rem] leading-relaxed text-white/55">
+            La plataforma de entrega gastronómica que conecta clientes, restaurantes y repartidores locales de forma justa y eficiente.
+          </p>
+          <div class="mt-6 flex items-center gap-2.5">
+            <button class="footer-social" type="button" data-share aria-label="Compartir Eat For Less">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true" translate="no">share</span>
+            </button>
+            <a class="footer-social" href="mailto:soporte@eatforless.com" aria-label="Escribir a Eat For Less">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true" translate="no">mail</span>
+            </a>
+          </div>
+          <span class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[0.68rem] font-semibold text-white/60">
+            <span class="live-dot" aria-hidden="true"></span>
+            Próximo lanzamiento
+          </span>
+        </div>
+
+        <div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div>
+            <h2 class="footer-title">Navegación</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="index.html">Inicio</a></li>
+              <li><a class="footer-link" href="comoFunciona.html">Cómo funciona</a></li>
+              <li><a class="footer-link" href="Beneficios.html">Beneficios</a></li>
+              <li><a class="footer-link" href="marca.html">Nuestra marca</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-title">Únete</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="inforepartidor.html">Sé repartidor</a></li>
+              <li><a class="footer-link" href="index.html#restaurantes">Restaurante aliado</a></li>
+              <li><a class="footer-link" href="mailto:soporte@eatforless.com?subject=Quiero%20ser%20de%20los%20primeros">Lista de lanzamiento</a></li>
+            </ul>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <h2 class="footer-title">Soporte</h2>
+            <ul class="space-y-3">
+              <li><a class="footer-link" href="index.html#faq">Preguntas frecuentes</a></li>
+              <li><a class="footer-link" href="mailto:soporte@eatforless.com">Contacto</a></li>
+              <li><a class="footer-link" href="legal.html#terminos">Términos y condiciones</a></li>
+              <li><a class="footer-link" href="legal.html#privacidad">Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <p class="text-[0.72rem] text-white/40">© <span data-year>2026</span> Eat For Less. Todos los derechos reservados.</p>
+        <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand">Come más. Paga menos.</p>
+      </div>
     </div>
-</footer>
+  </footer>
 
+  <button class="to-top" id="to-top" type="button" aria-label="Volver arriba">
+    <span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_upward</span>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-
+  <script src="assets/app.js" defer></script>
 </body>
 </html>
+
+
 
